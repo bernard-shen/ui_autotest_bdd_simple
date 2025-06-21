@@ -1,0 +1,2050 @@
+数据连接:
+
+  通用部分:
+    通用按钮: //button//span[text()='{button_name}']
+    输入框: //label[@for='{label_name}']/following-sibling::div/div/input
+    删除确认: //div[@class='el-message-box__btns']//button[span[text()='确定']]
+
+  查询部分:
+    连接名称: //label[@for='aliasName']/following-sibling::div/div/input
+    端口: //label[@for='port']/following-sibling::div/div/input
+    ip: //label[@for='host']/following-sibling::div/div/input
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    数据源类型: //label[@for='dataSourceTypeArray']/following-sibling::div/div/div[2]
+    源或目标端: //label[@for='dbSource']/following-sibling::div//input
+    源或目标端下拉: //li[span='{}']
+    连接状态: //label[@for='connectStatus']/following-sibling::div/div/div/input
+    隐私识别状态: //label[@for='discoverStatusArray']/following-sibling::div/div/div[1]/input
+    创建日期: //label[@for='createTime']/following-sibling::div/div/input[1]
+    数据源类型下拉: //li[span='{}']
+    连接状态下拉: //li[span='{}']
+    隐私识别状态下拉: //li[span='{}']
+    创建日期开始: //label[@for='createTime']/following-sibling::div//input[@placeholder='开始日期']
+    创建日期结束: //label[@for='createTime']/following-sibling::div//input[@placeholder='结束日期']
+
+  新建连接部分:
+    新建连接: //button//span[text()='新建连接']
+    测试连接: button:has-text('测试连接')
+    保存为草稿: //button[span[text()='保存为草稿']]
+    保存: //button[span[text()='保存 ']]
+    连接名称: //label[@for='aliasName']/following-sibling::div/div/input
+    端口: //label[@for='port']/following-sibling::div/div/input
+    ip地址: //label[@for='host']/following-sibling::div/div/input
+    数据库名称: //label[@for='dbName']/following-sibling::div/div/input
+    用户名: //label[@for='userName']/following-sibling::div/div/input
+    密码: //label[@for='password']/following-sibling::div/div/input
+    数据源类型: //label[@for="dataSourceType"]/following-sibling::div//input
+    子机构可用-否: //label[@for='enableQuote']/following-sibling::div//input[@value='0']
+    子机构可用-是: //label[@for='enableQuote']/following-sibling::div//input[@value='1']
+    连接模式-SN: //input[@value="ServiceName"]/preceding-sibling::span
+    连接模式-SID: //input[@value="SID"]/preceding-sibling::span
+    自动增量隐私发现-否: //label[text()='是否开启自动增量隐私发现：']/following-sibling::div//input[@value='0']/preceding-sibling::span
+    自动增量隐私发现-是: //label[text()='是否开启自动增量隐私发现：']/following-sibling::div//input[@value='1']/preceding-sibling::span
+    定时策略输入框: //label[text()='默认隐私发现任务定时策略：']/following-sibling::div/div/div[1]//input
+    定时策略下拉确认: //li[span='{}']
+    定时策略时间-每隔: //input[@role='spinbutton']
+    默认隐私方案: //span[text()=' 默认隐私方案 ']/preceding-sibling::span
+    选择隐私方案: //span[text()=' 选择隐私方案 ']/preceding-sibling::span
+    隐私方案选择框: //label[@for='discoverPlanId']/following::div[1]//input
+    隐私方案下拉选择: //ul//li[span[text()='{}']]
+    通用下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()='{}']]
+    发现部分数据源: //span[text()=' 发现部分数据 ']/preceding-sibling::span
+    发现全部数据源: //span[text()=' 发现全部数据 ']/preceding-sibling::span
+    勾选数据库: //span[text()=' {} ']/parent::div/parent::div/preceding-sibling::div
+    数据库名: //section[@id='content-wrap']//span[text()=' {} ']
+#    数据库展开: //section[@id='content-wrap']//span[text()=' {} ']//preceding::i[1]
+    数据库展开: //div/div[contains(@class,"huge-tree")]//section[@id="content-wrap"]//span[contains(text(),'{}')]//preceding::i[1]
+    勾选表: //section//span[text()=' {} ']/parent::div/parent::div/preceding-sibling::div
+    表名: //section[@id='content-wrap']//span[contains(text(),'{}')]
+    表展开: //section[@id='content-wrap']//span[text()=' {} ']//preceding::i[1]
+    全选: //span[contains(text(),'全选')]
+    勾选字段: //section[@id='content-wrap']//span[text()=' {} ']/parent::div/parent::div/preceding-sibling::div
+    字段名: //section[@id='content-wrap']//span[text()=' {} ']
+    覆盖手工修改-是: //label[text()='是否覆盖手工修改的隐私类型：']/following-sibling::div//div/div[1]//span[contains(@class,'el-radio__input')]
+    覆盖手工修改-否: //label[text()='是否覆盖手工修改的隐私类型：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    使用系统参数-勾选: //span[contains(text(),'使用系统参数')]/preceding-sibling::span
+    使用定义参数-勾选: //span[contains(text(),'使用定义参数')]/preceding-sibling::span
+    隐私发现并行线程数-勾选: //label[text()='隐私发现线程并行数：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    隐私发现并行线程数-输入框: //label[text()='隐私发现线程并行数：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    隐私发现样本行数-勾选: //label[text()='隐私发现样本行数：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    隐私发现样本行数-输入框: //label[text()='隐私发现样本行数：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    数据有效性比例-勾选: //label[text()='数据有效性比例(%)：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    数据有效性比例-输入框: //label[text()='数据有效性比例(%)：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    隐私判定最小比例-勾选: //label[text()='隐私类型判定最小比例(%)：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    隐私判定最小比例-输入框: //label[text()='隐私类型判定最小比例(%)：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    超长字段过滤-勾选: //label[text()='隐私发现超长字段过滤：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]
+    超长字段过滤-输入框: //label[text()='隐私发现超长字段过滤：']/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    隐私发现类型过滤-勾选: //label[contains(text(),'隐私发现类型过滤')]/following-sibling::div/div/div[2]//span[contains(@class,'el-radio__input')]
+    隐私发现类型过滤-输入框: //label[contains(text(),'隐私发现类型过滤')]/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input
+    隐私发现类型过滤-输入框-多个: (//label[contains(text(),'隐私发现类型过滤')]/following-sibling::div//div/div[2]//span[contains(@class,'el-radio__input')]/following-sibling::span//input)[{}]
+    隐私发现类型过滤-输入框-加号: //input[@placeholder="请填写数据类型"]/parent::div/following-sibling::i[contains(@class,'icon-zengjia')]
+    隐私发现类型过滤-输入框-减号-第几个: (//input[@placeholder="请填写数据类型"]/ancestor::span//i[contains(@class,'icon-jianshao')])[{}]
+    返回: //button[span[text()='返回']]
+
+    源端-目标端: //span[text()='{}']
+
+    hive-存储类型-选择: //span[text()='{}']
+    hive-文件URL: //label[@for='defaultFS']/following-sibling::div/div/input
+    hive-文件目录: //label[@for='baseFilePath']/following-sibling::div/div/input
+    hive-HDFS用户名: //label[@for='fileUsername']/following-sibling::div/div/input
+
+    hive-连接地址: //label[@for='defaultFS']/following-sibling::div/div/input
+    hive-文件路径: //label[@for='baseFilePath']/following-sibling::div/div/input
+    hive-文件用户名: //label[@for='fileUsername']/following-sibling::div/div/input
+    hive-文件密码: //label[@for='filePassword']/following-sibling::div/div/input
+    hive-认证方式: //label[@for='hiveOssAuthType']/following-sibling::div/div//input
+    hive-认证方式-下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()='{}']]
+
+    连接类型: //label[@for="connectionType"]/following-sibling::div//span[text()='{}']
+
+    远程地址: //label[@for='host']/following-sibling::div//input
+    远程目录: //label[@for='filePath']/following-sibling::div//input
+    文件类型: //label[@for='fileType']/following-sibling::div//input
+    编码方式: //label[@for='fileEncode']/following-sibling::div//input
+    文件-oss-连接地址: //label[@for='endpoint']/following-sibling::div//input
+    文件-oss-文件路径: //label[@for='dbName']/following-sibling::div//input
+
+
+
+    API接口-认证方式: //label[text()='认证方式：']/following-sibling::div//input
+    API接口-Token: //label[@for="password"]/following-sibling::div//input
+    消息队列-Broker地址: //label[@for="broker"]/following-sibling::div//textarea
+    消息队列-安全协议: //label[text()='安全协议：']/following-sibling::div//input
+    消息队列-协议机制: //label[text()='协议机制：']/following-sibling::div//input
+
+    发现对象勾选: //span[text()='{}']/preceding-sibling::label//input/preceding-sibling::span
+
+
+  列表部分:
+    首行数据: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]
+    连接名称: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[1]//div[@class="ellipsis el-popover__reference"]
+    连接编号: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[2]//div[@class="ellipsis el-popover__reference"]
+    数据源类型: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[3]//div
+    IP地址: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[5]//div[@class="ellipsis el-popover__reference"]
+    端口: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[6]//span
+    连接状态: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[7]//div
+    数据源状态: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[8]//div
+    隐私识别状态: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[11]//span[@class="el-popover__reference-wrapper"]
+    隐私识别状态-无内容: //div[contains(@class,'el-table__body-wrapper')]//tr[1]/td[11]//span
+    其他行-连接名称: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[1]//div[@class="ellipsis el-popover__reference"]
+    其他行-数据源类型: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[3]//div
+    其他行-创建日期: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[9]//div
+    其他行-IP地址: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[5]//div[@class="ellipsis el-popover__reference"]
+    其他行-端口: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[6]//span
+    其他行-连接状态: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[7]//div
+    其他行-数据源状态: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[8]//div
+    其他行-隐私识别状态: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[11]//span[@class="el-popover__reference-wrapper"]
+    其他行-隐私识别状态-无内容: //div[contains(@class,'el-table__body-wrapper')]//tr[{}]/td[11]//span
+    任务信息: //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='任务信息']]
+    识别结果: //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='识别结果']]
+    修改按钮: //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='修改']]
+    复制按钮: //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='复制']]
+    测试连接按钮:  //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='测试连接']]
+    更多按钮: .el-table__fixed-body-wrapper .more
+    更多按钮备用1: .el-table__fixed-body-wrapper >> .more
+    更多按钮备用2: //div[@class='el-table__fixed-body-wrapper']//tbody//div[@class='el-dropdown']/a/span
+    删除按钮: //ul[not(contains(@style,'none'))]//li[a[span[text()='删除']]]
+    禁用按钮: //ul[@x-placement='bottom-end']//span[text()='禁用'] >> visible=true
+    禁用按钮备用: //ul[not(contains(@style,'none'))]//li[a[span[text()='禁用']]]
+    启用按钮: //ul[@x-placement='bottom-end']//span[text()='启用'] >> visible=true
+    重新隐私发现: //ul[not(contains(@style,'none'))]//li[a[span[text()='重新隐私发现']]]
+    终止隐私发现: //ul[not(contains(@style,'none'))]//li[a[span[text()='终止隐私发现']]]
+    连接池配置: //ul[not(contains(@style,'none'))]//li[a[span[text()='连接池配置']]]
+
+
+  详情页部分:
+    连接名称: //div[@class='el-dialog__body']//div[span[text()='连接名称：']]
+    连接类型: //div[@class='el-dialog__body']//div[span[text()='连接类型：']]
+    数据源类型: //div[@class='el-dialog__body']//div[span[text()='数据源类型：']]
+    子机构可用: //div[@class='el-dialog__body']//div[span[text()='子机构可用：']]
+    IP地址: //div[@class='el-dialog__body']//div[span[text()='IP地址：']]
+    端口: //div[@class='el-dialog__body']//div[span[text()='端口：']]
+    连接模式: //div[@class='el-dialog__body']//div[span[text()='连接模式：']]
+    数据库名: //div[@class='el-dialog__body']//div[span[text()='数据库名：']]
+    用户名: //div[@class='el-dialog__body']//div[span[text()='用户名：']]
+    自定义参数: //div[@class='el-dialog__body']//div[span[text()='自定义参数：']]
+    创建日期: //div[@class='el-dialog__body']//div[span[text()='创建时间：']]
+    创建人: //div[@class='el-dialog__body']//div[span[text()='创建人：']]
+    连接状态: //div[@class='el-dialog__body']//div[span[text()='连接状态：']]
+    数据源状态: //div[@class='el-dialog__body']//div[span[text()='数据源状态：']]
+    隐私识别状态: //div[@class='el-dialog__body']//div[span[text()='隐私识别状态：']]
+    关闭: //div[@class='el-dialog__body']/following-sibling::div[@class='el-dialog__footer']//button[span[text()='关闭']]
+
+
+  详情页-任务信息:
+    基本信息: //div[@role='dialog' and @aria-label='隐私发现任务信息']//p[text()='基本信息']
+    隐私发现: //div[@role='dialog' and @aria-label='隐私发现任务信息']//p[text()='隐私发现']
+    隐私判定参数: //div[@role='dialog' and @aria-label='隐私发现任务信息']//p[text()='隐私判定参数']
+    任务运行参数: //div[@role='dialog' and @aria-label='隐私发现任务信息']//p[text()='任务运行参数']
+    任务创建信息: //div[@role='dialog' and @aria-label='隐私发现任务信息']//p[text()='任务创建信息']
+
+
+脱敏任务:
+  通用部分:
+    通用按钮: //button//span[text()='{button_name}']
+    输入框: //label[@for='{label_name}']/following-sibling::div/div/input
+    列表首行按钮: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='{button_name}']
+    删除确认: //div[@class='el-message-box__btns']//button[span[text()='确定']]
+    目录: //li[@role='menuitem']//span[text()='{}']
+    弹框提醒: //div[@role='alert']//p[text()='{}']
+    错误提示: //div[@class='el-form-item__error']
+
+  查询部分:
+    任务名称: //label[@for='taskName']/following-sibling::div/div/input
+    任务类型: //label[@for='taskType']/following-sibling::div
+    代理端口: //label[@for='proxyPort']/following-sibling::div/div/input
+    数据源: //label[@for='dataSource']/following-sibling::div
+    审批状态: //label[@for='statuses']/following-sibling::div
+    运行状态: //label[@for='runStatus']/following-sibling::div
+    启动时间: //label[@for='startTime']/following-sibling::div
+    任务类型下拉-访问防护: //li[span[text()='访问防护']]
+    任务类型下拉-访问审计: //li[span[text()='访问审计']]
+    数据源下拉: //li[span[text()='{}']]
+    审批状态下拉: //li[span[text()='{}']]
+    运行状态下拉: //li[span[text()='{}']]
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+
+  列表部分:
+    列表首行: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]
+    列表-首行-按钮-详情: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='详情']
+    列表-首行-按钮-分析: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='分析']
+    列表-首行-按钮-报告: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='报告']
+    列表-首行-按钮-提交: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='提交']
+    列表-首行-按钮-审批: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='审批']
+    列表-首行-按钮-启动: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='启动']
+    列表-首行-按钮-终止: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='终止']
+    列表-首行-按钮-终止1: //div[@class="main-table"]//div[@class="el-table__fixed-right"]//tbody//tr[1]//span[text()='终止']
+    列表-首行-按钮-修改: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='修改']
+    列表-首行-按钮-更多: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='更多']
+    列表-首行-更多-复制: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]//li//span[text()='复制']
+    列表-首行-更多-删除: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]//li//span[text()='删除']
+    列表-首行-数据-名称: //div[contains(@class,'el-table__fixed-body-wrapper')]//tbody//tr[1]//td[2]//div[@class="ellipsis el-popover__reference"]
+    列表-首行-数据-数据源: //div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[5]//span[@class="el-popover__reference-wrapper"]//div
+    列表-首行-数据-端口: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//td[6]//span
+    列表-首行-数据-审批状态: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[contains(@class,'ApproveStatus')]
+    列表-首行-数据-运行状态: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[contains(@class,'TaskRunStatus')]
+
+    列表-其他行-数据-任务名称: //div[contains(@class,'el-table__fixed-body-wrapper')]//tbody//tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    列表-其他行-数据-数据源: //div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[5]//span[@class="el-popover__reference-wrapper"]//div
+    列表-其他行-数据-代理端口: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//td[6]//span
+    列表-其他行-数据-审批状态: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[contains(@class,'ApproveStatus')]
+    列表-其他行-数据-运行状态: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[contains(@class,'TaskRunStatus')]
+
+    删除记录按钮: //button//span[text()='删除记录 ']
+    审批通过按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button//span[text()="审批通过"]
+    审批意见: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@role="dialog"]//div[@class="el-textarea"]/textarea
+    审批退回按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button//span[text()="审批退回"]
+    审批弹框关闭: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[@class="el-dialog__headerbtn" and @aria-label="Close"]
+    删除确认: //div[@role="dialog" and not(contains(@style, 'none'))]//div[@class="el-message-box__btns"]/button/span[text()="确定"]
+    删除取消: //div[@class="el-message-box__btns"]/button/span[text()="取消"]
+    二次审批-标题: //span[@class="el-dialog__title" and text()="任务信息"]
+    二次审批-表头字段: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//thead//tr[1]//th
+    二次审批-审批意见: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-textarea"]/textarea
+    二次审批-关闭按钮: //span[@class="el-dialog__title" and text()="任务信息"]/following-sibling::button/i
+
+
+  新建任务:
+    新建任务按钮: //button//span[text()='新建任务']
+    新建页面-顶部标题: //div[@class="top" and text()="新建任务"]
+    修改页面-顶部标题: //div[@class="top" and text()="修改任务"]
+    新建任务-任务名称: //label[@for='taskName']/following-sibling::div//input
+    新建任务-任务类型: //label[@for='taskType']/following-sibling::div//input
+    新建任务-描述: //label[@for='remark']/following-sibling::div//textarea
+    新建任务-数据源: //label[@for='dataSource']/following-sibling::div//input
+    新建任务-数据源下拉多列表: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li
+    新建任务-数据源下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()='{}']]
+    新建任务-代理端口: //label[@for='proxyPort']/following-sibling::div//input
+
+    新建任务-访问分组1: //label[@for='relations[0]']/following-sibling::div//div[contains(@class,'item first')]/div/div[not(contains(@class,'el-select-dropdown el-popper'))]//input
+    新建任务-访问分组: //label[@for='relations[0]']/following-sibling::div//div[contains(@class,'item first')]/div/div[not(contains(@style,'none'))]//input
+    新建任务-访问分组-其他行: //label[@for='relations[{}]']/following-sibling::div//div[contains(@class,'item first')]/div/div[not(contains(@class,'el-select-dropdown el-popper'))]//input
+    新建任务-访问分组下拉: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    新建任务-访问分组下拉列表-多个: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span]
+    访问分组hover-分组名: //div[@role="tooltip" and not(contains(@style,'none'))]//form//label[text()="分组名称:"]/following-sibling::div
+    访问分组hover-分组类别: //div[@role="tooltip" and not(contains(@style,'none'))]//form//label[text()="分组类别:"]/following-sibling::div
+    访问分组hover-其他字段名: //div[@role="tooltip" and not(contains(@style,'none'))]//form//label[text()="{}:"]
+
+    新建任务-脱敏方案: //label[@for='relations[0]']/following-sibling::div//div[contains(@class,'second')]
+    新建任务-脱敏方案1: //label[@for='relations[0]']/following-sibling::div//div[contains(@class,'second')]//div[contains(@class,'el-input')]//input
+    新建任务-脱敏方案下拉: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span[text()='默认脱敏方案']]
+    新建任务-脱敏方案下拉选择: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    新建任务-脱敏方案下拉列表-多个: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span]
+    脱敏方案hover-方案名: //div[@role="tooltip" and not(contains(@style,'none'))]//div[span[text()="方案名称:"]]
+    脱敏方案hover-默认脱敏算法: //div[@role="tooltip" and not(contains(@style,'none'))]//div[span[text()="默认脱敏算法:"]]
+    脱敏方案hover-隐私类型首行: //div[@role="tooltip" and not(contains(@style,'none'))]/div/div[3]//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[1]//div[@class="ellipsis el-popover__reference"]
+
+    新建任务-安全方案: //div[contains(@class,'third')]//div[contains(@class,'el-input')]//input
+    新建任务-安全方案下拉: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span[text()='默认安全方案']]
+    新建任务-安全方案下拉选择: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    新建任务-安全方案下拉列表-多个: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//ul//li[span]
+    安全方案hover-方案名: //div[@role="tooltip" and not(contains(@style,'none'))]//div[@class="safety-pop-info"]//table/tr[1]/td[2]
+    安全方案hover-安全规则: //div[@role="tooltip" and not(contains(@style,'none'))]//div[@class="safety-pop-info"]//table/tr[2]//div[@class="el-tree-node__content"]//span[2]/span
+    安全方案hover-描述: //div[@role="tooltip" and not(contains(@style,'none'))]//div[@class="safety-pop-info"]//table/tr[3]//td[2]
+    新建任务-强制脱敏-是: //label[text()=' 对不在隐私发现结果里的查询列作强制脱敏 ']/following-sibling::div//label[@tabindex='0']/span[1]
+    新建任务-强制脱敏-否: //label[text()=' 对不在隐私发现结果里的查询列作强制脱敏 ']/following-sibling::div//label[@tabindex='-1']/span[1]
+    新建任务-禁止查询-是: //label[text()=' 禁止对不在脱敏方案里的用户表进行查询 ']/following-sibling::div//label[@tabindex='0']/span[1]
+    新建任务-禁止查询-否: //label[text()=' 禁止对不在脱敏方案里的用户表进行查询 ']/following-sibling::div//label[@tabindex='-1']/span[1]
+    新建任务-限制行数-是: //label[text()=' 是否限定查询返回行数 ']/following-sibling::div//span[text()='是']/preceding-sibling::span
+    新建任务-限制行数-否: //label[text()=' 是否限定查询返回行数 ']/following-sibling::div//span[text()='否']/preceding-sibling::span
+    新建任务-默认行数: //label[text()=' 默认查询返回行数 ']/following-sibling::div//input
+    新建任务-取消按钮: //div[@class='card-container']//button//span[text()='取消']
+    新建任务-保存按钮: //div[@class='card-container']//button//span[text()='保存']
+    错误提示-单独存在: //div[@class='el-form-item__error']
+    数据源-IP地址: //div[@class='el-dialog__body']//p[text()='连接信息']/following-sibling::div[1]//div[@class='ellipsis el-popover__reference']
+    数据源-端口: //div[@class='el-dialog__body']//p[2]/following::div/div/span[text()='端口：']/parent::div
+    任务名称下方提示: //label[@for='taskName']/following-sibling::div//div[@class="el-form-item__error"]
+    数据源下方提示: //label[@for='dataSource']/following-sibling::div//div[@class="el-form-item__error"]
+    代理端口下方提示: //label[@for='proxyPort']/following-sibling::div//div[@class="el-form-item__error"]
+    默认返回行数下方提示: //label[@for='additionalParam.defaultRtnLines']/following-sibling::div//div[@class="el-form-item__error"]
+    访问分组下方提示: //label[@for='relations[1]']/following-sibling::div//div[@class="el-form-item__error"]
+    保存弹框提示: //div[@role='alert']//p[text()='{}']
+
+  数据源详情页:
+    标题: //span[@class="el-dialog__title" and text()="{}"]
+    字段名: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="{}："]
+    字段内容-统用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="{}："]/parent::div
+    字段内容-连接名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="连接名称："]/following-sibling::span//div[@class="ellipsis el-popover__reference"]
+    字段内容-ip地址: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="IP地址："]/following-sibling::span//div[@class="ellipsis el-popover__reference"]
+
+  脱敏任务详情页:
+    脱敏任务-标题: //span[@class="el-dialog__title" and text()="{}"]
+    访问来源展开: //div[@class="el-dialog__wrapper" and not(contains(@style, 'none'))]//div[@class="el-dialog__body"]//i
+    二级标题: //div[@class="el-dialog__wrapper" and not(contains(@style, 'none'))]//div[@class="el-dialog__body"]//p[text()="{}"]
+    任务名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="任务名称："]/following-sibling::span//div[@class="ellipsis el-popover__reference"]
+    字段内容-通用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="{}："]/parent::div
+    访问分组展开-字段名通用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//label[text()="{}:"]
+    访问分组展开-个人身份认证字段: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//label//span[contains(text(),"个人身份认证")]
+
+
+发现结果:
+  查询:
+    导出数据源输入框: //label[text()='数据源：']/following-sibling::div//input
+    导入数据源输入框: //div[@class='el-dialog__body']/div[not(contains(@class,'export-dialog'))]//span[text()='数据源：']/following-sibling::div//input
+    导入导出数据源下拉: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//div[@class='el-scrollbar']//ul//li//span[text()='{}']
+    连接名称: //label[@for='aliasName']/following-sibling::div/div/input
+    连接名精确: //label[@for='aliasName']/following-sibling::div/div/div//input
+    选择模糊: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='模糊']]
+    Schema名: //label[@for='schema']/following-sibling::div/div/input
+    Schema名精确: //label[@for='schema']/following-sibling::div/div/div//input
+    表名: //label[@for='tableName']/following-sibling::div/div/input
+    表名精确: //label[@for='tableName']/following-sibling::div/div/div//input
+    字段名: //label[@for='columnName']/following-sibling::div/div/input
+    字段名精确: //label[@for='columnName']/following-sibling::div/div/div//input
+    字段类型: //label[@for='columnType']/following-sibling::div/div/input
+    隐私类型: //label[@for='privacyTypeIds']/following-sibling::div/div
+    隐私类型下拉选择: //div[contains(@class,'el-select-dropdown')]//ul//li//span[text()='{}']
+    已手动修改: //label[@for='manualModify']/following-sibling::div/div
+    已手动修改下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none')) ]/div[@class='el-scrollbar']//ul//li//span[text()='{}']
+    更新时间: //label[@for='updateTime']/following-sibling::div/div
+    开始日期: //input[@placeholder='开始日期']
+    结束日期: //input[@placeholder='结束日期']
+    查询按钮: //div[@role="tabpanel" and not(contains(@style,'none'))]//button//span[text()='查询']
+    重置按钮: //div[@role="tabpanel" and not(contains(@style,'none'))]//button//span[text()='重置']
+    导入按钮: //div[@class="search-with-top"]//button//span[text()='导入']
+    导出按钮: //div[@class="search-with-top"]//button//span[text()='导出']
+    确定导出: //div[@class="el-dialog__footer"]//button//span[text()='导出']
+    字段-连接名称: //label[@for='aliasName']/span[contains(text(),'连接名称:')]
+    字段-Schema名: //label[@for='schema']/span[contains(text(),'Schema名/文件目录/业务系统:')]
+    字段-表名: //label[@for='tableName']//span[contains(text(),'表名/文件名/API名:')]
+    字段-表名备注: //label[@for='tableName']//span[contains(text(),'表名备注/文件名备注/API备注:')]
+    表名-下拉选择备注: //ul//span[text()='表名备注/文件名备注/API备注']
+    字段名-下拉选择备注: //ul//span[text()='字段名备注']
+    字段-字段名: //label[@for='columnName']//span[contains(text(),'字段名:')]
+    字段名备注: //label[@for='columnName']//span[contains(text(),'字段名备注:')]
+    字段-只看敏感字段: //label[@for='isSenseData']//span[contains(text(),'只看敏感字段:')]
+    字段-字段类型: //label[@for='columnType']//span[contains(text(),'字段类型:')]
+    字段-隐私类型: //label[@for='privacyTypeIds']//span[contains(text(),'隐私类型:')]
+    字段-已手动修改: //label[@for='manualModify']//span[contains(text(),'已手动修改:')]
+    字段-更新时间: //label[@for='updateTime']//span[contains(text(),'更新时间:')]
+    字段-只看识别告警: //label[@for='hasAlert']//span[contains(text(),'只看识别告警:')]
+    字段-是否加密: //label[@for='encryptFlag']//span[contains(text(),'是否加密:')]
+    字段-加密算法: //label[@for='encryptionAlgorithm']//span[contains(text(),'加密算法:')]
+    字段-秘钥长度: //label[@for='keyLength']//span[contains(text(),'密钥长度:')]
+    字段-秘钥路径: //label[@for='keyPath']//span[contains(text(),'密钥路径:')]
+    字段-只看依赖字段: //label[@for='dependFlag']//span[contains(text(),'只看依赖字段:')]
+    表备注名选择: //ul//li//span[text()='表名备注/文件名备注/API备注']
+    字段备注名选择: //ul//li//span[text()='字段名备注']
+
+    展开更多: //span[text()='展开']
+    是否加密: //label[@for='encryptFlag']/following-sibling::div/div
+    是否加密下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none')) ]/div[@class='el-scrollbar']//ul//li//span[text()='{}']
+    加密算法: //label[@for='encryptionAlgorithm']/following-sibling::div/div
+    加密算法下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none')) ]/div[@class='el-scrollbar']//ul//li//span[text()='{}']
+    秘钥长度: //label[@for='keyLength']/following-sibling::div/div
+    秘钥路径: //label[@for='keyPath']/following-sibling::div/div
+    秘钥路径精确: //label[@for='keyPath']/following-sibling::div/div/div//input
+    只看敏感字段: //label[@for='isSenseData']/following-sibling::div/div
+    只看识别告警: //label[@for='hasAlert']/following-sibling::div/div
+    只看依赖字段: //label[@for='dependFlag']/following-sibling::div/div
+    收起: //span[text()='收起']
+  列表:
+    表头-连接名称: //div[@class="el-table__header-wrapper"]//tr//th[2]/div[text()='连接名称']
+    表头-方案名: //div[@class="el-table__header-wrapper"]//tr/th[3]/div[text()='方案名']
+    表头-表名: //div[@class="el-table__header-wrapper"]//tr/th[4]/div[text()='表名']
+    表头-字段名: //div[@class="el-table__header-wrapper"]//tr/th[5]/div[text()='字段名']
+    表头-字段类型: //div[@class="el-table__header-wrapper"]//tr/th[6]/div[text()='字段类型']
+    表头-隐私类型: //div[@class="el-table__header-wrapper"]//tr/th[7]/div[text()='隐私类型']
+    表头-是否加密: //div[@class="el-table__header-wrapper"]//tr/th[8]/div[text()='是否加密']
+    表头-依赖字段: //div[@class="el-table__header-wrapper"]//tr/th[10]/div[text()='依赖字段']
+    表头-加密算法: //div[@class="el-table__header-wrapper"]//tr/th[11]/div[text()='加密算法']
+    表头-密钥长度: //div[@class="el-table__header-wrapper"]//tr/th[12]/div[text()='密钥长度']
+    表头-密钥路径: //div[@class="el-table__header-wrapper"]//tr/th[13]/div[text()='密钥路径']
+    表头-识别告警: //div[@class="el-table__header-wrapper"]//tr/th[14]/div[text()='识别告警']
+    表头-空值占比: //div[@class="el-table__header-wrapper"]//tr/th[15]/div[text()='空值占比']
+    表头-已手动修改: //div[@class="el-table__header-wrapper"]//tr/th[16]/div[text()='已手动修改']
+    表头-更新时间: //div[@class="el-table__header-wrapper"]//tr/th[17]/div[text()='更新时间']
+    表头-操作: //div[@class="el-table__header-wrapper"]//tr/th[18]/div[text()='操作']
+
+    连接名: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[2]//div[@class="ellipsis el-popover__reference"]
+    方案名: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[3]//div[@class="ellipsis el-popover__reference"]
+    表名: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[4]//p[@class="ellipsis el-popover__reference"]
+    字段名: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[5]//p[@class="ellipsis el-popover__reference"]
+    字段类型: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[6]//div[@class="ellipsis el-popover__reference"]
+    隐私类型: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[7]//div//span[@class="el-link--inner"]
+    隐私类型输入框: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[7]//div//input
+    隐私类型下拉选择: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//li//span[text()='{}']
+    是否加密: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[8]//div//span[@class="el-link--inner"]
+    加密数据库: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[9]//div//span
+    依赖字段: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[10]//div//span[@class="el-link--inner"]
+    加密算法: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[11]//div//span//div[@class="ellipsis el-popover__reference"]
+    秘钥长度: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[12]//div//span//div[@class="ellipsis el-popover__reference"]
+    秘钥路径: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[13]//div//span//div[@class="ellipsis el-popover__reference"]
+
+    识别告警: //div[contains(@class,"body--wrapper")]//table//tbody//tr[1]//td[14]//div//span//div[@class="ellipsis el-popover__reference"]
+    空值占比: //div[contains(@class,"body--wrapper")]//table//tbody//tr[5]//td[15]//div//span//span[@classname="ellipsis"]
+    已手动修改: //div[contains(@class,"body--wrapper")]//table//tbody//tr[5]//td[16]//div//span
+
+
+    所有行-连接名: //div[@class="result-container"]//tbody//tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    所有行-方案名: //div[@class="result-container"]//table//tbody//tr[{}]//td[3]//div[@class="ellipsis el-popover__reference"]
+    所有行-表名: //div[@class="result-container"]//table//tbody//tr[{}]//td[4]//span[@class="ellipsis el-popover__reference"]
+    所有行-字段名: //div[@class="result-container"]//table//tbody//tr[{}]//td[5]//span[@class="ellipsis el-popover__reference"]
+    所有行-字段类型: //div[@class="result-container"]//table//tbody//tr[{}]//td[6]//div[@class="ellipsis el-popover__reference"]
+    所有行-隐私类型: //div[@class="result-container"]//table//tbody//tr[{}]//td[7]//div//span[@class="el-link--inner"]
+    所有行-隐私类型输入框: //div[@class="result-container"]//table//tbody//tr[{}]//td[7]//div//input
+    所有行-隐私类型下拉选择: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//li//span[text()='{}']
+    所有行-是否加密: //div[@class="result-container"]//table//tbody//tr[{}]//td[8]//div//span[@class="el-link--inner"]
+    所有行-加密数据库: //div[@class="result-container"]//table//tbody//tr[{}]//td[9]//div//span
+    所有行-依赖字段: //div[@class="result-container"]//table//tbody//tr[{}]//td[10]//div//span[@class="el-link--inner"]
+    所有行-加密算法: //div[@class="result-container"]//table//tbody//tr[{}]//td[11]//div//span//div[@class="ellipsis el-popover__reference"]
+    所有行-秘钥长度: //div[@class="result-container"]//table//tbody//tr[{}]//td[12]//div//span//div[@class="ellipsis el-popover__reference"]
+    所有行-秘钥路径: //div[@class="result-container"]//table//tbody//tr[{}]//td[13]//div//span//div[@class="ellipsis el-popover__reference"]
+    所有行-识别告警: //div[@class="result-container"]//table//tbody//tr[{}]//td[14]//div//span//div[@class="ellipsis el-popover__reference"]
+    所有行-空值占比: //div[@class="result-container"]//table//tbody//tr[{}]//td[15]//div//span//span[@classname="ellipsis"]
+    所有行-已手动修改: //div[@class="result-container"]//table//tbody//tr[{}]//td[16]//div//span
+    所有行-隐私类型-红线隐私: //div[@class='el-table__virtual-wrapper']//tbody/tr[{}]/td[7]//span[@class="el-popover__reference"]
+
+    预览按钮-备用1: //td[not(contains(@class,'hidden'))]//span[text()='预览']
+    预览按钮: //div[@class="el-table__fixed-right"]//tbody//tr[1]//td//span[text()='预览']
+    识别历史: //td[not(contains(@class,'hidden'))]//span[text()='识别历史']
+    识别依据: //td[not(contains(@class,'hidden'))]//span[text()='识别依据']
+    重新识别: //td[not(contains(@class,'hidden'))]//span[text()='重新识别']
+    其他行-预览: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]/td/div//span[text()='预览']
+    其他行-识别历史: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]/td/div//span[text()='识别历史']
+    其他行-识别依据: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]/td/div//span[text()='识别依据']
+    其他行-重新识别: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]/td/div//span[text()='重新识别']
+    批量修改: //button//span[text()='批量修改']
+    全选框: //div[@class="card-container table"]//div[@class="el-table__header-wrapper"]//th[1]//span[@class="el-checkbox__inner"]
+    按字段单行勾选: //div[@class='el-table__virtual-wrapper']//tbody/tr/td[5]//span/span[text()='{}']/ancestor::tr/td[1]//input/preceding-sibling::span
+    批量修改-弹窗标题: //div[@class='el-dialog__header']//span[text()='批量修改']
+    批量修改隐私类型: //div[@class='el-dialog__body']//div[contains(text(),'修改隐私类型为')]//input
+    批量修改-修改隐私类型为: //div[@class='el-dialog__body']//div[contains(text(),'修改隐私类型为')]//input
+    批量修改-修改是否加密为: //div[@class='el-dialog__body']//div[contains(text(),'修改是否加密为')]//input
+    批量修改下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none')) ]/div[@class='el-scrollbar']//ul//li//span[text()='{}']
+    仅修改当前页: //div[@class='el-dialog__body']//span[text()='仅修改当前页']/preceding-sibling::span
+    跨页修改: //div[@class='el-dialog__body']//span[text()=' 跨页修改 ']/preceding-sibling::span
+    跨页修改-起始页: //div[@class='el-dialog__body']//span[text()=' 跨页修改 ']/div[1]//input
+    跨页修改-终止页: //div[@class='el-dialog__body']//span[text()=' 跨页修改 ']/div[2]//input
+    批量修改问号: //button[i[@class='el-icon-question']]
+    跨页修改问号: //span[@class="el-popover__reference-wrapper"]//i[contains(@class,'icon-bangzhu')]
+    跨页修改-页码确认: //div[@class="batchTop"]//span[contains(text(),'跨页修改')]//button//span
+
+    批量修改取消按钮: //div[@aria-label="dialog"]//button//span[contains(text(),'关闭')]
+    批量修改确认按钮: //div[@aria-label="dialog"]//button//span[contains(text(),'确认修改')]
+    批量修改确认按钮-不跨页: //div[@aria-label='批量修改隐私类型']//button//span[text()='确定']
+
+    批量修改确认弹窗-标题: //div[@role='dialog' and @aria-label='批量修改确认']//span[text()='批量修改确认']
+    批量修改确认-搜索框: //div[@class="batchTop"]//input[@placeholder="输入关键字筛选"]
+    批量修改确认-全选: //div[@class='el-dialog__body']//thead//tr/th[1]//input/preceding-sibling::span
+    批量修改确认-行数: //div[@class='el-dialog__body']//tbody/tr
+    批量修改确认-多行-单行勾选: //div[@class='el-dialog__body']//tbody/tr[{}]/td[1]//input/preceding-sibling::span
+    批量修改确认-多行-单行勾选-按字段名: //div[@class='el-dialog__body']//tbody//tr//td[div[text()='{}']]/preceding-sibling::td//input/preceding-sibling::span
+    批量修改确认-多行-字段名: //div[@class='el-dialog__body']//tbody/tr[{}]/td[2]/div
+    批量修改确认-多行-表名: //div[@class='el-dialog__body']//tbody/tr[{}]/td[3]/div
+    批量修改确认-多行-schema名: //div[@class='el-dialog__body']//tbody/tr[{}]/td[4]/div
+    批量修改确认-多行-隐私类型: //div[@class='el-dialog__body']//tbody/tr[{}]/td[5]/div
+    批量修改确认-返回按钮: //div[@role='dialog' and @aria-label='批量修改确认']//button//span[text()='返回']
+    批量修改确认-取消按钮: //div[@aria-label='修改隐私发现结果']//button//span[contains(text(),'取消')]
+    批量修改确认-确定修改按钮: //div[@aria-label='修改隐私发现结果']//button//span[contains(text(),'确认修改')]
+    已选中条数: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//div[contains(text(),'已选中字段')]
+    已选中条数-条数确认: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//div[contains(text(),'已选中字段{}条')]
+    批量修改确认-表头-所有字段: //div[@class="batchTop"]/following-sibling::div//thead//th
+    批量修改确认-表头-字段名: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//thead//tr/th[2]/div
+    批量修改确认-表头-表名: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//thead//tr/th[3]/div
+    批量修改确认-表头-schema名: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//thead//tr/th[4]/div
+    批量修改确认-表头-隐私类型: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//thead//tr/th[5]/div
+    修改为隐私类型: //div[@role='dialog' and @aria-label='批量修改确认']//div[@class='el-dialog__body']//div[contains(text(),'修改为')]
+    修改成功提示: //div[@role='alert']//p[text()='修改成功']
+    弹框提示1: //div[@role='alert']//p[text()='{}']
+    页码输入跳转: //span[@class='el-pagination__jump']//input
+    每页条数点击: //span[@class='el-pagination__sizes']//input
+    每页条数下拉选择: //div[@class='el-scrollbar']//ul//li//span[text()='{}条/页']
+
+    批量修改-搜索按钮: //i[@class="el-input__icon el-icon-search"]
+
+    弹框提示-确认修改: //div[@aria-label="修改隐私发现结果"]//div[@class="el-message-box__btns"]//button//span[contains(text(),'确认修改')]
+    弹框提示-修改取消: //div[@aria-label="修改隐私发现结果"]//button//span[contains(text(),'取消')]
+  左下方:
+    搜索框: //div[@role="tabpanel" and not(contains(@style,'none'))]//section[@class='search-bar']//input[@placeholder='请输入关键字筛选']
+    数据本身: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class='tree-content']//div[contains(@class,'ellipsis') and text()=' {} ']
+    数据展开: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class='tree-content']//div[contains(@class,'ellipsis') and contains(text(),'{}')]/ancestor::section[1]/div[1]
+    数据右侧隐私统计: //div[@class='tree-content']//div[contains(@class,'ellipsis') and text()=' {} ']/ancestor::div[@class="label"]//a/span[text()='隐私统计']
+  隐私统计详情:
+    连接名称: //div[@class='el-dialog__body']//div[contains(text(),'连接名称')]/following-sibling::div
+    Schema数量: //div[@class='el-dialog__body']//div[contains(text(),'Schema数量')]/following-sibling::div
+    数据表数量: //div[@class='el-dialog__body']//div[contains(text(),'数据表数量')]/following-sibling::div
+    字段数量: //div[@class='el-dialog__body']//div[text()='字段数量：']/following-sibling::div
+    隐私字段数量: //div[@class='el-dialog__body']//div[contains(text(),'隐私字段数量')]/following-sibling::div
+    隐私类型种类: //div[@class='el-dialog__body']//div[contains(text(),'隐私类型种类')]/following-sibling::div
+    隐私发现失败表: //div[@class='el-dialog__body']//div[text()='隐私发现失败表:']/following-sibling::div
+    具体字段数量: //div[@class='el-dialog__body']//div[@class="card-content"]//p[contains(text(),'{}')]
+    隐私字段A: //div[@class='el-dialog__body']//div[text()='隐私字段数量:']/ancestor::div[2]/following-sibling::div//div[@class='el-scrollbar__view']/p[1]
+    具体失败表: //div[@class='el-dialog__body']//div[text()='隐私发现失败表:']/ancestor::div[2]/following-sibling::div//div[@class='el-scrollbar__view']/p
+    失败表A: //div[@class='el-dialog__body']//div[text()='隐私发现失败表:']/ancestor::div[2]/following-sibling::div//div[@class='el-scrollbar__view']/p[1]
+    统计时间: //div[@class='el-dialog__body']//div[@class="label" and contains(text(),'统计时间')]
+  预览详情:
+    字段-当前隐私类型: //div[@class='el-dialog__body']/div/div[contains(text(),'当前隐私类型：')]
+    当前隐私类型值: //div[@class='el-dialog__body']/div/div[contains(text(),'当前隐私类型：')]/span
+    字段-仅查看有效值: //div[@class='el-dialog__body']//span[text()='仅查看有效值 ']
+    仅查看有效值切换: //div[@class='el-dialog__body']//span[@class='el-switch__core']
+    字段-序号: //div[@class='el-dialog__body']//div[text()='序号']
+    字段-脱敏前数据: //div[@class='el-dialog__body']//div/span[text()='脱敏前数据']
+    字段-脱敏后数据: //div[@class='el-dialog__body']//div/span[text()='脱敏后数据']
+    列表行数: //div[@class='el-dialog__body']//tbody//tr
+    各行-脱敏前数据: //div[@class='el-dialog__body']//tbody//tr[{}]//td[2]//span
+    各行-脱敏后数据: //div[@class='el-dialog__body']//tbody//tr[{}]//td[3]//span
+    脱敏方案下拉框: //div[@aria-label="隐私预览"]//div[@class="info tab"]/div[not(contains(@style,'none'))]//input
+    脱敏方案下拉选择: //body/div[contains(@class,'el-select-dropdown')]//div[@class='el-scrollbar']//ul//li[span[text()='{}']]
+  其他详情:
+    识别依据弹窗: //div[@role='dialog' and @aria-label='识别依据']
+    识别依据弹窗标题: //div[@role='dialog' and @aria-label='识别依据']//div[@class='el-dialog__header']/span
+    识别依据位图: //div[@role='dialog' and @aria-label='识别依据']//div[@class='el-dialog__body']//canvas
+    识别结果-字段: //div[@role='dialog' and @aria-label='识别依据']//div[@class='el-dialog__body']//div[text()='识别结果:']
+    识别结果-内容: //div[@role='dialog' and @aria-label='识别依据']//div[@class='dialog-detail-info']/div[1]/div[2]
+    识别比例-字段: //div[@role='dialog' and @aria-label='识别依据']//div[@class='dialog-detail-info']//div[text()='识别比例:']
+    命中数-样本数-字段: //div[@role='dialog' and @aria-label='识别依据']//div[@class='dialog-detail-info']//div[text()='(命中数/样本数)']
+    识别优先级-字段: //div[@role='dialog' and @aria-label='识别依据']//div[@class='dialog-detail-info']//div[text()='识别优先级:']
+    识别优先级-内容: //div[@role='dialog' and @aria-label='识别依据']//div[@class='dialog-detail-info']//div[text()='识别优先级:']/following-sibling::div
+    识别历史-字段: .el-dialog .el-table__header-wrapper th
+    识别历史-连接名称-字段: //div[@class='el-dialog__body']//span[text()='连接名称:']
+    识别历史-连接名称-内容: //div[@class='el-dialog__body']//span[text()='连接名称:']/following-sibling::span
+    识别历史-字段名-字段: //div[@class='el-dialog__body']//table//thead[@class='has-gutter']//span[text()='字段名']
+    识别历史-隐私类型-字段: //div[@class='el-dialog__body']//table//thead[@class='has-gutter']//span[text()='隐私类型']
+    识别历史-发现次数-字段: //div[@class='el-dialog__body']//table//thead[@class='has-gutter']//span[text()='发现次数']
+    识别历史-识别时间-字段: //div[@class='el-dialog__body']//table//thead[@class='has-gutter']//span[text()='识别时间']
+    识别历史-空值占比-字段: //div[@class='el-dialog__body']//table//thead[@class='has-gutter']//span[text()='空值占比']
+    识别历史-数据行数: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr
+    识别历史-字段名: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[1]//span
+    识别历史-隐私类型: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[2]//span//span
+    识别历史-发现次数: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[3]//span
+    识别历史-识别时间: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[4]//span
+    识别历史-空值占比: //div[@class='el-dialog__body']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[5]//span
+    重新识别-标题: //div[@class='el-dialog__header']//span[text()='重新识别']
+    重新识别-抽取识别: //div[@class='el-dialog__body']//span[text()='当前字段重新抽取']
+    重新识别-取消: //div[@aria-label='重新识别']//button//span[text()='取消']
+    重新识别-确定: //div[@aria-label='重新识别']//button//span[text()='确定']
+    重新识别-输入框: //div[@aria-label='重新识别']//div[@class='el-dialog__body']//input
+    重新识别-关闭叉号: //div[@aria-label='重新识别']//button[@aria-label='Close']
+  结构发现-查询:
+    结构发现结果-顶部tab栏: //div[@role='tab' and text()='结构发现结果']
+    连接名: //label[@for='connect']/following-sibling::div/div/input
+    方案名: //div[@role="tabpanel" and not(contains(@style,'none'))]//label[@for='schema']/following-sibling::div/div/input
+    表名: //div[@role="tabpanel" and not(contains(@style,'none'))]//label[@for='table']/following-sibling::div/div/input
+    类型输入框: //div[@role="tabpanel" and not(contains(@style,'none'))]//label[@for='type']/following-sibling::div//div//input
+    类型下拉选择: //div[contains(@class,"el-select-dropdown") and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()="{}"]]
+    对象名: //div[@role="tabpanel" and not(contains(@style,'none'))]//label[@for='name']/following-sibling::div/div/input
+    查询按钮: //div[@role="tabpanel" and not(contains(@style,'none'))]//button//span[text()='查询']
+  结构发现-左侧:
+    搜索框: //div[@role="tabpanel" and not(contains(@style,'none'))]//section[@class='search-bar']//input[@placeholder='请输入关键字筛选']
+    数据本身: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class='tree-content']//div[contains(@class,'ellipsis') and text()=' {} ']
+    数据展开: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class='tree-content']//div[contains(@class,'ellipsis') and contains(text(),'{}')]/ancestor::section[1]/div[1]
+    数据右侧错误信息: abc
+  结构发现-列表:
+    连接名: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[1]//div[@class="ellipsis el-popover__reference"]
+    方案名: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    表名: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[3]//div[@class="ellipsis el-popover__reference"]
+    表名-无内容: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[3]
+    类型: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[4]//div[@class="ellipsis el-popover__reference"]
+    对象名: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[5]//div[@class="ellipsis el-popover__reference"]
+    DDL: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[6]//div[@class="ellipsis el-popover__reference"]
+    DDL-无内容: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[6]
+    提示信息: //div[@role="tabpanel" and not(contains(@style,'none'))]//div[@class="card-container table"]//table//tbody/tr[{}]//td[7]
+
+
+发现历史:
+  查询部分:
+    连接名称: //label[@for='aliasName']/following-sibling::div/div/input
+    隐私方案: //label[@for='discoverPlan']/following-sibling::div//input
+    发现方式: //label[@for='incrementFlag']/following-sibling::div//input
+    任务类型: //label[@for='taskType']/following-sibling::div//input
+    任务状态: //label[@for='taskStatus']/following-sibling::div//input
+    隐私方案下拉: //li[span[text()='{}']]
+    发现方式下拉: //li[span[text()='{}']]
+    任务类型下拉: //li[span[text()='{}']]
+    任务状态下拉: //li[span[text()='{}']]
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    菜单: //li[@role="menuitem"]//span[text()='{}']
+
+  列表:
+    列表行数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr
+    列表首行: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]
+    首行-连接名称: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[2]//div[@class="ellipsis el-popover__reference"]
+    首行-连接编号: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[3]
+    首行-发现次数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[4]
+    首行-隐私方案: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[5]//div[@class="ellipsis el-popover__reference"]
+    首行-发现方式: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[6]//span[@class="el-popover__reference-wrapper"]
+    首行-任务类型: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[7]//span[@class="el-popover__reference-wrapper"]
+    首行-任务状态: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[8]
+    首行-字段总量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[9]
+    首行-有效数据行数-抽取总行数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[10]//span/span
+    首行-隐私字段数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[11]
+    首行-隐私类型数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[12]
+    首行-手动修改数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[13]
+    首行-本次变化: //div[@class='el-table__fixed-body-wrapper']//tbody/tr[1]//span[@class='operate-btn']//span[text()='本次变化']
+    首行-错误信息: //div[@class='el-table__fixed-body-wrapper']//tbody/tr[1]//span[@class='operate-btn']//span[text()='错误信息']
+
+    其他行-连接名称: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    其他行-发现次数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[4]
+    其他行-隐私方案: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[5]//div[@class="ellipsis el-popover__reference"]
+    其他行-发现方式: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[6]//span[@class="el-popover__reference-wrapper"]
+    其他行-任务类型: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[7]//span[@class="el-popover__reference-wrapper"]
+    其他行-任务状态: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[8]
+    其他行-字段总量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[9]
+    其他行-有效数据行数-抽取总行数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[10]//span/span
+    其他行-隐私字段数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[11]
+    其他行-隐私类型数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[12]
+    其他行-手动修改数量: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[13]
+    其他行-本次变化: //div[@class='el-table__fixed-body-wrapper']//tbody/tr[{}]//span[@class='operate-btn']//span[text()='本次变化']
+    其他行-错误信息: //div[@class='el-table__fixed-body-wrapper']//tbody/tr[{}]//span[@class='operate-btn']//span[text()='错误信息']
+
+    其他行-勾选框: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[1]//label/span
+    按行勾选: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]/td[1]//label/span/span
+    其他行-连接名: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[2]//td[2]//div[@class="ellipsis el-popover__reference"]
+    差异对比按钮: //button//span[contains(text(),'差异对比')]
+    暂无数据: //div[@class="el-table__empty-block"]//span[text()="暂无数据"]
+
+    差异对比-标题: //span[@class="el-dialog__title" and contains(text(),"差异对比")]
+    差异对比-首行所有文本: //div[@aria-label="差异对比"]//div[@class="el-dialog__body"]//div[@class="el-table__header-wrapper"]//thead//tr[1]//th
+    差异对比-搜索框: //div[@aria-label="差异对比"]//div[@class="el-dialog__body"]//div[@class="el-table__header-wrapper"]//thead//tr[2]//th[1]//input
+    差异对比-隐私类型变化-前: //div[@aria-label="差异对比"]//div[@class="el-dialog__body"]//div[@class="el-table__header-wrapper"]//thead//tr[2]//th[3]
+    差异对比-隐私类型变化-后: //div[@aria-label="差异对比"]//div[@class="el-dialog__body"]//div[@class="el-table__header-wrapper"]//thead//tr[2]//th[4]
+    差异对比-首行-结构变化: //div[@aria-label="差异对比"]//tbody//tr[1]//td[2]//span
+    差异对比-首行-隐私类型变化前: //div[@aria-label="差异对比"]//tbody//tr[1]//td[3]
+    差异对比-首行-隐私类型变化后: //div[@aria-label="差异对比"]//tbody//tr[1]//td[4]
+    差异对比-首行-变化说明: //div[@aria-label="差异对比"]//tbody//tr[1]//td[5]
+    差异对比-首行-展开: //div[@aria-label="差异对比"]//tbody//tr[1]//td[1]//i
+    差异对比-首行-schema: //div[@aria-label="差异对比"]//tbody//tr[1]//td[1]//span
+
+    差异对比-其他行-结构变化: //div[@aria-label="差异对比"]//tbody//tr[{}]//td[2]//span
+    差异对比-其他行-隐私类型变化前: //div[@aria-label="差异对比"]//tbody//tr[{}]//td[3]
+    差异对比-其他行-隐私类型变化后: //div[@aria-label="差异对比"]//tbody//tr[{}]//td[4]
+    差异对比-其他行-变化说明: //div[@aria-label="差异对比"]//tbody//tr[{}]//td[5]
+
+    差异对比-表-展开: //div[@aria-label="差异对比"]//tbody//tr[2]//td[1]//i
+    差异对比-表名: //div[@aria-label="差异对比"]//tbody//tr[2]//td[1]/div//div/following-sibling::span
+    差异对比-字段名: //div[@aria-label="差异对比"]//tbody//tr[3]//td[1]//div//span[3]
+    差异对比-弹窗关闭: //div[@aria-label="差异对比"]//div[@class="el-dialog__header"]//button[@aria-label="Close"]
+
+    错误信息-标题: //span[@class="el-dialog__title" and contains(text(),"错误信息")]
+    页码输入框: //span[@class="el-pagination__jump"]//input[@type="number"]
+    数字页码: //ul[@class="el-pager"]//li[text()="{}"]
+    页码向左翻页: //button//i[contains(@class, 'el-icon-arrow-left')]
+    页码向右翻页: //button//i[contains(@class, 'el-icon-arrow-right')]
+
+  弹框:
+    差异对比无内容: //div[@aria-label='差异对比']//div[@class='info']
+
+
+风险分析-全局:
+  查询:
+    会话状态: //label[@for='sessionStatus']/following-sibling::div/div//input
+    任务名称: //label[@for='taskUuid']/following-sibling::div/div//input
+    风险等级: //label[@for='leakRiskLevel']/following-sibling::div/div//input
+    执行结果: //label[@for='execStatus']/following-sibling::div/div//input
+    会话状态-下拉: //li[span[text()='{}']]
+    任务名称-下拉: //li[span[text()='{}']]
+    风险等级-下拉: //li[span[text()='{}']]
+    执行结果-下拉: //li[span[text()='{}']]
+    更多搜索: //div[@class='absolute-menu']//span[text()=' 更多搜索 ']
+    更多搜索下拉框: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]
+    更多搜索-全选: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]//span[contains(text(),'全选')]
+    更多搜索-所有勾选框: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]//div//div//label/span/span
+    更多搜索-按名称勾选: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,'none'))]//div//div//label[span[text()="{}"]]/span[1]/span
+    所有搜索框-上方文本: //div[@class="search-with-top"]//form//div[@class="search-form-item"]//label//span[contains(text(),'{}')]
+    搜索框-输入-按文本: //div[@class="search-with-top"]//form//div[@class="search-form-item"]//label[span[contains(text(),'{}')]]/following-sibling::div//input
+    下拉框-按文本: //div[contains(@class,"el-select-dropdown") and not(contains(@style, 'none'))]//ul//li[span[text()="{}"]]
+
+    审计操作: //div[text()='安全防护']/following-sibling::div//span[text()='审计操作']/preceding-sibling::span
+    SQL语句: //div[text()='执行信息']/following-sibling::div//span[text()='SQL语句']/preceding-sibling::span
+    其他搜索选项: //div[text()='{}']/following-sibling::div//span[text()='{}']/preceding-sibling::span
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    SQL语句搜索框: //label[@for='sqlCommand']/following-sibling::div/div//input
+    审计操作搜索框: //label[@for='auditOperCopy']/following-sibling::div/div//input[@placeholder='请选择']
+    审计操作下拉: //li[span[text()='{}']]
+    sql功能类型-下拉图标: //label[@for="sqlFuncTypeCopy"]/following-sibling::div//span[@class="el-input__suffix-inner"]
+    sql功能类型-下拉清空: //label[@for="sqlFuncTypeCopy"]/following-sibling::div//span[@class="el-input__suffix-inner"]/i[not(contains(@style,'none'))]
+    sql功能类型-输入框: //div[@class="search-with-top"]//form//label[@for="sqlFuncTypeCopy"]/following-sibling::div//input[@class="el-select__input is-small"]
+    右侧-增加: //thead//i[@class="el-icon-plus"]
+    右侧-增加-列表框: //div[@role="tooltip" and not(contains(@style, 'none'))]//div[@aria-label="checkbox-group"]
+    右侧-增加-文字列表: //div[@role="tooltip" and not(contains(@style, 'none'))]//div[@aria-label="checkbox-group"]//p//label/span[2]
+    右侧-增加-勾选-按文本: //div[@role="tooltip" and not(contains(@style, 'none'))]//div[@aria-label="checkbox-group"]//p//label[span[text()="{}"]]/span[1]/span
+    右侧-增加-勾选-列表: //div[@role="tooltip" and not(contains(@style, 'none'))]//div[@aria-label="checkbox-group"]//p//label/span[1]/span
+    右侧-增加-全选: //label[span[text()="全选"]]/span[1]/span
+    右侧-增加-确定按钮: //div[@role="tooltip" and not(contains(@style, 'none'))]//button//span[text()="确定"]
+
+  列表:
+    表头行: //div[@class="main-table"]//div[@class="el-table__header-wrapper"]//thead/tr/th
+    首行数据: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]
+    列表-行数: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr
+    列表-所有行列: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td/div
+    列表-所有行-某列: //div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[{}]/div
+    首行-增加列: //button//i[@class='el-icon-plus']
+    首行-增加审计操作: //p//input[@value='审计操作']/parent::span
+    首行-增加其他列: //p//input[@value='{}']/parent::span
+    首行-增加列-确定: //div[@role='group']/following-sibling::button[span[text()='确定']]
+    首行-数据源: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[2]/div
+    首行-sql编号: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[5]/div
+    首行-sql语句: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[6]/div
+    首行-执行结果: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[9]
+    首行-风险等级: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[10]
+    首行-安全操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[11]
+    首行-脱敏操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[12]
+    首行-审计操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[1]//td[13]
+
+    其他行-sql语句: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[6]/div/span/div[2]
+    其他行-执行结果: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[9]
+    其他行-风险等级: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[10]
+    其他行-安全操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[11]
+    其他行-脱敏操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[12]
+    其他行-审计操作: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody/tr[{}]//td[13]
+
+    分页器-前往: //span[@class="el-pagination__jump"]
+    前往页码内容: //span[@class="el-pagination__jump"]//input
+    点击页码: //ul[@class="el-pager"]//li[text()='{}']
+    页码列表: //ul[@class="el-pager"]//li
+    上一页: //button[@class="btn-prev"]
+    下一页: //button[@class="btn-next"]
+    每页展示条数: //span[@class="el-pagination__sizes"]//input
+    每页展示条数下拉选择: //div[contains(@class,"el-select-dropdown")]//ul//li[span[text()="{}条/页"]]
+    共多少条数据: //span[@class="el-pagination__total"]
+
+  风险分析-详情页:
+    弹框主体: //div[@class="el-drawer rtl"]//section[@class="el-drawer__body"]
+    风险等级: //div[@class='active active-0']
+    风险信息: //label[text()='风险信息:']/following-sibling::div
+    访问分组: //label[text()='访问分组:']/following-sibling::div
+    访问用户IP: //label[text()='访问用户IP:']/following-sibling::div
+    数据库地址: //label[text()='数据库地址:']/following-sibling::div
+    数据库端口: //label[text()='数据库端口:']/following-sibling::div
+    SQL功能类型: //label[text()='SQL功能类型:']/following-sibling::div
+
+    详情页-通用文本: //label[text()='{}:']/following-sibling::div
+    操作类型: //label[text()='操作类型:']/following-sibling::div
+    SQL编号: //label[text()='SQL编号:']/following-sibling::div
+    SQL语句: //label[text()='SQL语句:']/following-sibling::div/span
+    执行结果: //label[text()='执行结果:']/following-sibling::div/span
+    规则风险: //label[text()='规则风险:']/following-sibling::div/span
+    安全操作: //label[text()='安全操作:']/following-sibling::div
+    脱敏操作: //label[text()='脱敏操作:']/following-sibling::div
+    脱敏方案: //label[text()='脱敏方案:']/following-sibling::div
+    处理结果: //label[text()='处理结果:']/following-sibling::div
+    访问时间: //label[text()='访问时间:']/following-sibling::div
+    请求时间: //label[text()='请求时间:']/following-sibling::div
+
+    右侧-某行-字段名: //div[@class="rule-manager"]//tbody/tr[{}]/td[1]//span[@class="el-popover__reference"]
+    右侧-某行-脱敏方式: //div[@class="rule-manager"]//tbody/tr[{}]/td[2]//span[@class="el-popover__reference"]
+    右侧-某行-数据集-首个: //div[@class="rule-manager"]//tbody/tr[{}]/td[3]//span[@class="el-popover__reference"]
+
+    查看更多: //span[text()='查看更多']
+    弹框-首行-字段名: //div[@class='el-dialog__body']//tbody//tr[1]//td[1]/div/span
+    弹框-首行-脱敏方式: //div[@class='el-dialog__body']//tbody//tr[1]//td[2]/div/span
+    弹框-首行-数据集: //div[@class='el-dialog__body']//tbody//tr[1]//td[3]/div/span
+    弹框-首行-数据集多个: //div[@class='el-dialog__body']//tbody//tr[1]//td[{}]/div/span
+
+    弹框-其他行-字段名: //div[@class='el-dialog__body']//tbody//tr[{}]//td[1]/div/span
+    弹框-其他行-脱敏方式: //div[@class='el-dialog__body']//tbody//tr[{}]//td[2]/div/span
+    弹框-其他行-数据集: //div[@class='el-dialog__body']//tbody//tr[{}]//td[3]/div/span
+    弹框-其他行-数据集多个: //div[@class='el-dialog__body']//tbody//tr[{}]//td[{}]/div/span
+
+    脱敏数据详情-标题: //span[@class='el-dialog__title' and text()='脱敏数据详情']
+    脱敏数据详情-表头: //div[@aria-label="脱敏数据详情"]//div[@class="el-table__header-wrapper"]//thead/tr[1]/th
+    脱敏数据详情-某行多列文本: //div[@aria-label="脱敏数据详情"]//div[@class="el-table__body-wrapper is-scrolling-none"]//tr[{}]//td//span[@class="el-popover__reference"]
+
+
+  数据源-详情页:
+    标题: //span[@class="el-dialog__title" and text()="{}"]
+    标题可见: //div[@class="el-dialog__wrapper" and not(contains(@style, 'none'))]//span[@class="el-dialog__title"]
+    字段名: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="{}："]
+    字段内容-统用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="{}："]/parent::div
+    字段内容-连接名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="连接名称："]/following-sibling::span/div[2]
+    字段内容-ip地址: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]//span[text()="IP地址："]/following-sibling::span/div[2]
+
+  其他:
+    顶部页签: //div[@role="tablist"]//div[contains(@id,'tab')]
+    顶部页签-按名称: //div[@role="tablist"]//div[contains(@id,'tab') and text()="{}"]
+    顶部新增图标: //div[@class='el-tabs__header is-top']//i[@class='el-icon-plus']
+    新增页签按钮: //div[@class='el-tabs__header is-top']//i[@class='el-icon-plus']
+    页签新增title: //span[@class="el-dialog__title" and text()='新增']
+    页签新增-页签名称-字段: //div[@class="el-dialog__body"]//label[@for="name" and contains(text(),'页签名称')]
+    页签新增-页签名称: //div[@class="el-dialog__body"]//label[@for="name"]/following-sibling::div//input
+    页签新增-页面显示-字段: //div[@class="el-dialog__body"]//label[@for="tab" and contains(text(),'页面显示')]
+    页签新增-页面显示: //div[@class="el-dialog__body"]//label[@for="tab"]/following-sibling::div//input
+    页签新增-筛选条件-字段: //div[@class="el-dialog__body"]//label[@for="screenCondition" and contains(text(),'筛选条件')]
+    页签新增-筛选条件: //div[@class="el-dialog__body"]//label[@for="screenCondition"]/following-sibling::div//input[not(contains(@readonly,"readonly"))]
+    页签新增-下拉选择-按文本: //div[contains(@class,"el-select-dropdown") and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()="{}"]]
+    页签新增-取消按钮: //div[@aria-label="新增"]//div[@class="el-dialog__footer"]//button//span[text()='取消']
+    页签新增-保存按钮: //div[@aria-label="新增"]//div[@class="el-dialog__footer"]//button//span[text()='保存']
+    页签新增-筛选条件-输入框-展开按钮: //label[text()='{}：']/following-sibling::div//span[@class="el-input__suffix-inner"]/i
+    页签新增-筛选条件-输入框-按文本: //label[text()='{}：']/following-sibling::div//input
+    页签删除-按文本: //div[text()="{}"]//span[@class="el-icon-close"]
+    页签删除提醒-确定: //div[@aria-label="提示"]//div[@class="el-message-box__btns"]//button/span[contains(text(),'确定')]
+    页签删除提醒-取消: //div[@aria-label="提示"]//div[@class="el-message-box__btns"]//button/span[contains(text(),'取消')]
+    删除提示内容: //div[@aria-label="提示"]//div[@class="el-message-box__content"]//div[@class="el-message-box__message"]/p
+    数据源右侧-删除: //label[@for="resourceName"]/following-sibling::div/span[@class="btn el-icon-close"]
+
+
+  访问用户:
+    sql操作条数: //div[@class="app-container"]//div[@class="ip-tag-group"][2]/div/label[1]//span[contains(text(),'SQL操作：')]
+    风险统计条数-按列: //div[@class="app-container"]//div[@class="ip-tag-group"][2]/div/label[{}]//span[@class="el-radio__label"]
+    某行-sql语句点击: //div[@class="right"]//ul//ul//li[{}]//span[@class="click-link el-popover__reference"]
+    sql详情-所有title: //form[@class="el-form el-form--label-right"]/div//div[@role="button"]
+    sql详情-不同模块div-按文本: //form[@class="el-form el-form--label-right"]//div[@role="button" and text()="{}"]/parent::div/following-sibling::div
+    风险等级列表: //div[@class="riskLevel-container"]//div
+    风险提示字段: //label[text()="风险信息:"]
+    风险提示内容: //label[text()="风险信息:"]/following-sibling::div
+    执行者信息-字段: //form[@class="el-form el-form--label-right"]//div[@role="button" and text()="执行者信息"]/parent::div/following-sibling::div//div//label
+    访问对象信息-字段: //form[@class="el-form el-form--label-right"]//div[@role="button" and text()="访问对象信息"]/parent::div/following-sibling::div//div//label
+    字段补充: //div//label
+    内容补充: /following-sibling::div
+    查询-ip输入框: //label[text()="访问IP:"]/following-sibling::div//input
+    查询-ip: //input[@placeholder="输入访问IP"]
+    查询-时间范围-开始: //input[@placeholder="开始日期" and not(contains(@readonly,"readonly"))]
+    查询-时间范围-结束: //input[@placeholder="结束日期" and not(contains(@readonly,"readonly"))]
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    左侧-ip内容: //div[@class="left"]//div[@class="el-card__body"]//div[text()="访问用户IP："]/following-sibling::div
+    左侧展开收起图标: (//div[@class="left"]//div[@class="el-card__body"]/div/i)[1]
+    左侧展开图标: (//div[@class="left"]//div[@class="el-card__body"]/div/i[@class="el-icon-arrow-right"])[1]
+    左侧收起图标: (//div[@class="left"]//div[@class="el-card__body"]/div/i[@class="el-icon-arrow-down"])[1]
+    左侧展开下拉列表: //div[@class="left"]//div[@class="el-card__body"]//ul//li
+    左侧-首个数据源: //div[@class="left"]//div[@class="el-card__body"]//ul/li[1]//div[@class="el-popover__reference"]/div[1]
+    左侧-数据源按文本-可能多个: //div[@class="left"]//div[@class="el-card__body"]//ul/li//div[@class="el-popover__reference"]/div[text()="{}"]
+    左侧-首个数据源-访问时间: //div[@class="left"]//div[@class="el-card__body"]//ul/li[1]//div[@class="el-popover__reference"]/div[2]
+    左侧-访问数据源行数: //div[@class="left"]//div[@class="el-card__body"]//ul/li//div[@class="el-popover__reference"]
+    左侧-首个数据源-访问时间-按行: //div[@class="left"]//div[@class="el-card__body"]//ul/li[{}]//div[@class="el-popover__reference"]/div[2]
+    左侧-访问用户ip条数: //div[@class="el-scrollbar"]//div[@class="el-card__body"]
+    左侧-某条访问用户ip点击: (//div[@class="el-scrollbar"]//div[@class="el-card__body"])[{}]
+    左侧-某条ip展开-首个数据源: (//div[@class="el-scrollbar"]//div[@class="el-card__body"])[{}]//li[1]
+    显示用户: //span[@class="el-link--inner" and text()='显示用户']
+    不显示用户: //span[@class="el-link--inner" and text()='不显示用户']
+    用户左侧展开-按文本: //div[@class="user-text"]/span//div[text()=" {} "]/ancestor::div[2]/i
+    数据源列表-按用户: //div[@class="user-text"]/span//div[text()=" {} "]/ancestor::div[3]//ul//li//div[@class="el-popover__reference"]/div[1]
+    所有会话: //span[text()="所有会话"]
+    所有会话-右侧问号: //span[text()="所有会话"]/parent::a/following-sibling::span//i
+    所有会话-右侧hover弹框: //div[@role="tooltip" and @aria-hidden="false"]
+    持续时间: //div[@class="ip-tag-group"]/div[contains(text(),'持续时间')]
+    右侧-会话展开收起: //div[@class="right"]//div[@class="el-scrollbar__view"]//ul/li[1]//i
+    右侧-sql语句ul: //ul[@class="sub-timeline el-timeline"]
+    右侧-sql条数: //ul[@class="sub-timeline el-timeline"]/li
+    右侧-会话编号: //label[text()="会话编号："]/following-sibling::div//input
+    右侧-会话状态: //label[text()="会话状态："]/following-sibling::div//input
+    右侧-会话状态-下拉列表: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//div[@class="el-scrollbar"]//ul/li
+    右侧-左侧-所有会话状态: //ul/li//div[@class="break-dot"]
+    右侧-首条sql: //ul[@class="sub-timeline el-timeline"]//li[1]//div[@class="el-timeline-item__content"]//span[@class="click-link el-popover__reference"]
+    右侧-sql-按行: //ul[@class="sub-timeline el-timeline"]//li[{}]//div[@class="el-timeline-item__content"]//span[@class="click-link el-popover__reference"]
+    右侧sql-hover文本弹框文本: //div[@role="tooltip" and @aria-hidden="false"]//div/div
+    右侧-sql耗时-按行: //div[@class="right"]//div[@class="el-scrollbar__wrap"]//ul//ul//li[{}]//div[@class="el-timeline-item__wrapper"]//div[@class="progress-line"]/following-sibling::div
+
+  数据源:
+    左侧-数据源卡片-多个: //div[@class="resource-container"]//div[@class="left"]//div[@class="el-card box-card is-always-shadow"]
+    左侧-数据源卡片-首个: //div[@class="resource-container"]//div[@class="left"]//div[@class="el-card box-card is-always-shadow"][1]
+    左侧-数据源输入框: //div[contains(text(),"数据源名称：")]//input
+    左侧-数据源下拉点击-按名称: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//div[@class="el-scrollbar"]//ul/li//span[text()="{}"]
+    左侧-数据源名称-可能多个: //div[@class="el-card__body"]//span[text()='数据源名称：']/following-sibling::span/div[@class="click-link ellipsis"]
+    左侧-sql语句条数: //div[text()="SQL语句(条)："]/following-sibling::div[1]
+    左侧-风险语句条数: //span[text()="风险语句(条)："]/parent::div/following-sibling::div[1]
+    左侧-访问用户IP(个): //span[text()="访问用户IP(个)："]
+    左侧-访问用户ip条数: //span[text()="访问用户IP(个)："]/ancestor::div[1]/following-sibling::div
+    访问用户ip-左侧展开: //span[text()="访问用户IP(个)："]/ancestor::div[1]/i
+    左侧-ip地址-单个: //div[@class="left"]//div[@class="ip-list"]//div[@class="ip-item"]//span/div[@class="el-popover__reference"]
+    左侧-ip左侧展开: //div[@class="ip-list"]//div[@class="ip-item"]//i
+    左侧-IP展开-访问用户-按名称: //div[@class="ip-list"]//div[@class="auth-item"]//span/div[text()=" {} "]
+    左侧-ip展开-用户名: //div[@class="ip-list"]//div[@class="auth-item"]//span/div[not(contains(@style,'none'))]
+
+    显示频率: //label[text()='显示频率：']/following-sibling::div//input
+    时间范围-开始: //label[text()='时间范围：']/following-sibling::div//input[@placeholder="开始日期"]
+    时间范围-结束: //label[text()='时间范围：']/following-sibling::div//input[@placeholder="结束日期"]
+    会话状态: //div[text()='会话状态：']/following-sibling::div[1]//input
+    安全操作: //div[text()='安全操作：']/following-sibling::div[1]//input
+    风险等级: //div[text()='风险等级：']/following-sibling::div[1]//input
+    执行结果: //div[text()='执行结果：']/following-sibling::div[1]//input
+    下拉列表选择: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//div[@class="el-scrollbar"]//ul/li//span[text()='{}']
+    下拉列表多个: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//div[@class="el-scrollbar"]//ul/li
+    重置按钮: //div[@class="search-table-button"]//button/span[contains(text(),'重置')]
+    查询按钮: //div[@class="search-table-button"]//button/span[contains(text(),'查询')]
+
+    列表-表头-多字段: //div[@class="main-table"]//table//thead/tr/th
+    列表-当前行数: //div[@class="main-table"]//table//tbody/tr
+    列表-某行-多列: //div[@class="main-table"]//table//tbody/tr[{}]/td
+    列表-某行-sql语句: //div[@class="main-table"]//table//tbody/tr[{}]/td[6]//div[@class="ellipsis el-popover__reference"]
+    列表-首行-执行结果-失败图标: //div[@class="main-table"]//table//tbody/tr[1]/td[8]//span/i
+    列表-首行-sql编号: //div[@class="main-table"]//table//tbody/tr[1]/td[5]//span/div[not(contains(@style,'none'))]
+    列表-失败原因hover: //div[@role="tooltip" and @aria-hidden="false"]//div[1]
+    列表下方提示: //p[@class="primary tip"]
+    某行-连接状态: //div[@class="main-table"]//table//tbody/tr[{}]/td[4]
+    某行-安全操作: //div[@class="main-table"]//table//tbody/tr[{}]/td[9]
+    某行-风险等级: //div[@class="main-table"]//table//tbody/tr[{}]/td[7]
+    某行-执行结果: //div[@class="main-table"]//table//tbody/tr[{}]/td[8]
+
+
+隐私方案-方案配置:
+  常用按钮:
+    新建方案: //button//span[text()='新建方案']
+
+  查询:
+    隐私方案名称: //label[@for='name']/following-sibling::div/div/input
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    内置输入框: //label[@for='isBuiltIn']/following-sibling::div/div//input
+    内置下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class='el-scrollbar']//li//span[text()='{}']
+    审批状态输入框: //label[@for='status']/following-sibling::div/div//input
+    审批状态下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class='el-scrollbar']//li//span[text()='{}']
+    更新时间-开始日期: //label[@for='updateTimeRange']/following-sibling::div/div/input[1]
+    更新时间-结束日期: //label[@for='updateTimeRange']/following-sibling::div/div/input[2]
+
+  详情页:
+    左上角标题: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__header']/span[text()='隐私方案详情']
+    方案名称: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='隐私方案名称:']/following-sibling::div
+    内置-自定义: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='内置/自定义:']/following-sibling::div
+    隐私类型集合框: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='隐私类型集合:']/following-sibling::div//div[@class='el-scrollbar__view']
+    隐私类型集合条数: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='隐私类型集合:']/following-sibling::div//div[@class='el-scrollbar__view']/p
+    隐私类型集合-具体内容: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='隐私类型集合:']/following-sibling::div//div[@class='el-scrollbar__view']/p[]
+    识别优先级: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='识别优先级:']/following-sibling::div
+    指定字段类型: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='指定字段类型:']/following-sibling::span
+    关联数据源集合框: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='关联数据源:']/following-sibling::div
+    关联数据源条数: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='关联数据源:']/following-sibling::div//div[@class='el-scrollbar__view']/p
+    关联数据源-具体内容: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='关联数据源:']/following-sibling::div//div[@class='el-scrollbar__view']/p[{}]/span
+    描述: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='描述:']/following-sibling::div
+    创建人: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='创建人:']/following-sibling::div
+    创建时间: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='创建时间:']/following-sibling::div
+    更新人: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='更新人:']/following-sibling::div
+    更新时间: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='更新时间:']/following-sibling::div
+    所属部门: //div[@role='dialog' and @aria-label='隐私方案详情']//div[@class='el-dialog__body']//div[text()='所属部门:']/following-sibling::div
+
+  新建:
+    页面字段-多个: //div[@role='dialog' and @aria-label='dialog']//div[@class='el-dialog__body']//label[@class="el-form-item__label"]
+    新建方案: //button//span[text()='新建方案']
+    标题-固定焦点: //span[@class="title-gap"]
+    弹框标题: //div[@role='dialog']//div[@class='el-dialog__header']//span[text()='新建隐私方案']
+    保存: //button//span[text()='保存']
+    取消: //div[@class='el-dialog__wrapper' and not(contains(@style,'none'))]//div[@class='el-dialog__footer']//button//span[text()='取消']
+    方案名称: //div[@class='el-dialog__body']//label[@for='name']/following-sibling::div//input
+    默认全部隐私类型: //span[text()='默认发现全部隐私类型']/preceding-sibling::span/span
+    按需发现隐私类型: //span[text()='按需选择发现类型']/preceding-sibling::span/span
+    默认优先级: //span[text()=' 使用默认优先级 ']/preceding-sibling::span/span
+    自定义优先级: //span[text()='自定义优先级']/preceding-sibling::span/span
+    自定义优先级-按位置: //p[text()='拖动顺序改变优先级']/following-sibling::div/div[{}]
+    自定义优先级-按名称: //p[text()='拖动顺序改变优先级']/following-sibling::div/div/div[text()='{}']
+    所有: //span[contains(text(),'所有')]/preceding-sibling::span/span
+    所有搜索: //div[@class='el-transfer trans']//div[@titles='所有,已选'][1]//input[@placeholder='请输入搜索内容']
+    所有清空: //div[@class='el-transfer trans']//div[@titles='所有,已选'][1]//i[@class='el-input__icon el-icon-search']
+    已选: //span[contains(text(),'已选')]/preceding-sibling::span/span
+    已选搜索: //div[@class='el-transfer trans']//div[@titles='所有,已选'][2]//input[@placeholder='请输入搜索内容']
+    已选清空: //div[@class='el-transfer trans']//div[@titles='所有,已选'][2]//i[@class='el-input__icon el-icon-search']
+    勾选增加: //div[@class='el-transfer trans']/div[1]//div[@role='group']/label/span[span[text()='{}']]/preceding-sibling::span/span
+    按行序勾选: //div[@aria-label='checkbox-group' and not(contains(@style,'none'))]/label[{}]/span[1]
+    向右: //div[@class='el-transfer__buttons']/button[2]/span
+    勾选减少: //div[@class='el-transfer trans']/div[3]//div[@role='group']//label//span[span[text()='{}']]/preceding-sibling::span/span
+    向左: //div[@class='el-transfer__buttons']/button[1]/span
+    指定字段类型: //div[@role='dialog' and @aria-label='dialog']//div[@class='el-dialog__body']//label[text()='指定字段类型：']
+    描述: //div[@role='dialog' and @aria-label='dialog']//div[@class='el-dialog__body']//label[text()='描述：']
+    描述输入内容: //label[@for='remark']/following-sibling::div//textarea
+    字数提示: //label[@for='remark']/following-sibling::div//textarea/following-sibling::span
+    填写示例: //div[@role='dialog' and @aria-label='dialog']//div[@class='el-dialog__body']//label//span[text()='填写示例']
+    加号: //i[@class='el-icon-plus']
+    减号: //i[@class='el-icon-minus']
+    删除按钮: //div[@class="field-item"]//span[text()='删除']
+    指定字段类型-行数多1: //div[@class='el-dialog__body']//label[span[text()='填写示例']]/parent::div/following-sibling::div
+    指定字段类型-行数: //input[@placeholder="数据库名"]
+    指定字段类型-数据库名: (//input[@placeholder='数据库名'])[{}]
+    指定字段类型-方案名: (//input[@placeholder='方案名'])[{}]
+    指定字段类型-模式名: (//input[@placeholder='模式名'])[{}]
+    指定字段类型-表名: (//input[@placeholder='表名'])[{}]
+    指定字段类型-字段名: (//input[@placeholder='字段名'])[{}]
+    指定字段类型-请选择: (//div[@class='el-dialog__body']//input[@placeholder='请选择'])[{}]
+    指定字段类型-下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class='el-scrollbar']//li//span[text()='{}']
+
+    所有隐私类型数量: //div[@aria-label='checkbox-group' and not(contains(@style,'none'))]/label
+    所有隐私类型-文本: //div[@aria-label='checkbox-group' and not(contains(@style,'none'))]/label[{}]/span[2]/span
+    文本查找隐私类型: //div[@aria-label='checkbox-group' and not(contains(@style,'none'))]//label/span[2]/span[text()='{}']
+    左侧内容前缀: //div[@class='el-transfer trans']//div[@titles='所有,已选'][1]
+    右侧内容前缀: //div[@class='el-transfer trans']//div[@titles='所有,已选'][2]
+    比较查找隐私类型左: //div[@class='el-transfer trans']//div[@titles='所有,已选'][1]//div[@aria-label='checkbox-group' and not(contains(@style,'none'))]//label/span[2]/span[text()='{}']
+    比较查找隐私类型右: //div[@class='el-transfer trans']//div[@titles='所有,已选'][2]//div[@aria-label='checkbox-group' and not(contains(@style,'none'))]//label/span[2]/span[text()='{}']
+    搜索无数据: //p[@class='el-transfer-panel__empty' and not(contains(@style,'none')) and text()='无匹配数据']
+    移动后无数据: //div[@class='el-transfer trans']//div[@titles='所有,已选'][1]//p[text()='无数据']
+    移动后无数据-右侧: //div[@class='el-transfer trans']//div[@titles='所有,已选'][2]//p[text()='无数据']
+    新建成功-标题: //div[@class='el-message-box__message']//span[text()='新建发现方案成功！']
+    修改内容-修改成功: //div[@class='el-message-box__message']//span[text()='修改发现方案成功！']
+    不修改-保存成功: //div[@role='alert']//p[text()='修改成功']
+    新建成功-内容: //div[@class='el-message-box__message']//p[text()='请提交，并联系管理员审批']
+    新建成功-关闭按钮: //div[@class='el-message-box']//button[span[contains(text(),'关闭')]]
+    新建成功-关闭叉号: //div[@class='el-message-box' and not(contains(@style,'none'))]//button[@aria-label='Close']
+
+  列表:
+    修改1: //div[@class='el-table__fixed-right']//table//tbody//a[span[text()='修改']]
+    首行-审批: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//a/span[text()='审批']
+    首行-修改: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//a/span[text()='修改']
+    首行-删除: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//a/span[text()='删除']
+    首行-查看: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//a/span[text()='查看']
+    首行-提交: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//a/span[text()='提交']
+    审批通过:  //button[span[text()='审批通过']]
+    审批意见: //textarea[@placeholder='若需退回，审批意见不可为空']
+    审批拒绝: //button[span[text()='审批退回']]
+    审批: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[8]//a/span[text()='审批']
+    修改: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[8]//a/span[text()='修改']
+    删除: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[8]//a/span[text()='删除']
+    查看: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[8]//a/span[text()='查看']
+    提交: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[8]//a/span[text()='提交']
+    首行-方案名:  //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[1]//div[contains(@class,'ellipsis')]
+    其他行-方案名: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[1]//div[contains(@class,'ellipsis')]
+    首行-识别优先级:  //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[2]//div//span//span
+    首行-内置-自定义:  //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[3]//div//span//span
+    首行-关联数据源:  //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[4]//div//span
+    首行-描述:  //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[5]//div[@class="ellipsis el-popover__reference"]
+    首行-审批状态: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[6]//div//span/span[contains(@class,'status')]
+    首行-更新时间: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[7]//div//span
+    其他行-更新时间: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[{}]/td[7]//div//span
+    首行-操作-第一个按钮: //div[@class='el-table__fixed-body-wrapper']//table//tbody/tr[1]/td[8]//span[@class='operate-btn'][1]//span
+    删除提醒标题: //div[@class='delete-title' and text()='确定要删除此隐私方案吗？ ']
+    删除-隐私方案名字段: //div[@class='el-dialog__body']//span[text()='隐私方案名称：']
+    删除-隐私方案名内容: //div[@class='el-dialog__body']//span[text()='隐私方案名称：']/following-sibling::i
+    删除提示: //div[@class='delete-msg']//span[text()='提示：']
+    删除提示内容: //div[@class='delete-msg']//span[text()='删除后不可找回，是否确定删除此隐私方案？']
+    删除取消: //div[@class='el-dialog__body']/following-sibling::div[@class='el-dialog__footer']//button[span[text()='取消']]
+    删除确定: //div[@class='el-dialog__body']/following-sibling::div[@class='el-dialog__footer']//button[span[text()='确定']]
+    删除叉号: //div[@class='el-dialog__body']/preceding-sibling::div[@class='el-dialog__header']//button[@aria-label='Close']
+    审批叉号: //div[@class='el-dialog__header']//span[text()='方案审批']/following-sibling::button[@aria-label='Close']
+    二次审批-修改类别: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[1]/td[1]//span/span
+    二次审批-修改字段: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[1]/td[2]//span/span
+    二次审批-修改前减: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[1]/td[3]/div/span
+    二次审批-修改后: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[1]/td[4]/div/span/div[1]
+    二次审批-修改后减: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[1]/td[4]/div/span
+    二次审批-行数: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr
+    二次审批-其他行-修改类别: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[{}]/td[1]//span/span
+    二次审批-其他行-修改字段: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[{}]/td[2]//span/span
+    二次审批-其他行-修改前: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[{}]/td[3]/div/span/div[1]
+    二次审批-其他行-修改后: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[{}]/td[4]/div/span/div[1]
+    二次审批-其他行-修改后减: //div[@aria-label='方案审批']//div[@class='el-dialog__body']//tbody/tr[{}]/td[4]/div/span
+
+隐私方案-隐私类型:
+  查询:
+    新建隐私类型按钮: //button//span[text()='新建隐私类型']
+    隐私类型名称: //div[@class="el-card__body"]//label[@for='privacyName']/following-sibling::div/div/input
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+    内置自定义: //label[@for='isBuiltIn']/following-sibling::div/div//input
+    规则类别: //label[@for="privacyCode"]/following-sibling::div/div//input
+    红线隐私: //label[@for="isRedline"]/following-sibling::div/div//input
+    下拉选择: //li[contains(@class,"el-select-dropdown__item")]//span[text()="{}"]
+
+  新建:
+    新建隐私类型按钮: //button//span[text()='新建隐私类型']
+    新建弹框标题: //span[@class="title-gap" and text()="新建隐私类型"]
+    隐私类型名称: //div[@class="el-dialog__body"]//label[@for="privacyName"]/following-sibling::div//input
+    规则类别点击: //div[@class='el-dialog__body']//label[@for='privacyCode']/following-sibling::div//input
+    规则类别下拉选择: //div[contains(@class,'el-select-dropdown el-popper') and not(contains(@style,'none'))]//li//span[text()='{}']
+    识别规则: //label[@for='findRule']/following-sibling::div//textarea
+    测试规则: //textarea[@placeholder="请输入样例数据"]
+    测试按钮: //button[span[text()='测试']]
+    描述: //label[@for='remark']/following-sibling::div//textarea
+    规则类别-帮助: //label[@for="privacyCode"]/following-sibling::div//div[@class="dialog-question"]/span
+    识别规则-帮助: //label[@for="suffix"]/following-sibling::div//div[@class="dialog-question"]/span
+    保存按钮: //span[@class="title-gap" and text()='新建隐私类型']/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button//span[text()='保存']
+    取消按钮: //span[@class="title-gap" and text()='新建隐私类型']/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button[span[text()='取消']]
+    关闭按钮: //div[@class="el-message-box" and not(contains(@style,'none'))]//div[@class='el-message-box__btns']/button
+    隐私类型名称下方提示: //label[@for='privacyName']/following-sibling::div//div[@class="el-form-item__error"]
+    识别规则下方提示: //label[@for='findRule']/following-sibling::div//div[@class="el-form-item__error"]
+    规则类别下方提示: //label[@for='privacyCode']/following-sibling::div//div[@class="el-form-item__error"]
+    测试规则下方提示: //div[@class="el-dialog__body"]//span[contains(@class,"el-tag")]
+    测试规则提示关闭: //div[@class="el-dialog__body"]//span[contains(@class,"el-tag")]/i
+    日期-分割符选择: //div[@class="date-rules"]/span[1]//input
+    日期-正则输入: //div[@class="date-rules"]//div//input[@placeholder="输入正则，不可带()<>"]
+    点击年月日: //div[@class="date-btns"]//span[text()='年(YYYY)']
+    点击时分秒: //div[@class="date-btns"]//span[text()='时(hh)']
+    识别规则-输入字典: //div[@role="radiogroup"]/label[1]/span[1]
+    识别规则-导入文件: //div[@role="radiogroup"]/label[2]/span[1]
+    上传文件: //span[text()='上传文件']
+    上传文件输入框: //input[@type="file" and @accept=".csv"]
+    上传文件-内容展示框: //textarea[@disabled="disabled"]
+    下载模块: //span[text()='下载模板']
+    新建成功提醒: //div[@aria-label="新建隐私类型成功" and not(contains(@style,'none'))]//div[@class="el-message-box__message"]/p
+    修改弹框标题: //span[@class="title-gap" and text()="修改隐私类型"]
+    修改取消: //span[@class="title-gap" and text()="修改隐私类型"]/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button[span[text()='取消']]
+
+  列表:
+    当前页行数: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr
+    隐私类型名称: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[1]//div[@class="ellipsis el-popover__reference"]
+    识别规则-默认: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[2]//span
+    识别规则-自定义: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[2]//span[@class="el-popover__reference-wrapper"]
+    内置自定义: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[3]//span/span
+    规则类别: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[4]//span/span
+    红线隐私: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[5]//span/span
+    已匹配字段: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[6]//span
+    描述: //div[@class='main-table']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]/td[7]//div[@class="ellipsis el-popover__reference"]
+    首行-删除: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//a[span[text()='删除']]
+    首行-修改: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()='修改']
+    首行-设为红线: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()='设为红线']
+    首行-查看: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()='查看']
+    知晓协议: //div[text()='已知晓以上细则，同意更新隐私方案']
+#    知晓协议: //label[@class='el-checkbox']/span/span
+    设为红线: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//td[8]//span[text()='设为红线']
+    取消红线: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//td[8]//span[text()='取消红线']
+    双击可查看隐私类型详情: //p[text()='双击可查看隐私类型详情']
+    分页器-前往: //span[@class="el-pagination__jump"]
+    前往页码内容: //span[@class="el-pagination__jump"]//input
+    点击页码: //ul[@class="el-pager"]//li[text()='{}']
+    上一页: //button[@class="btn-prev"]
+    下一页: //button[@class="btn-next"]
+    每页展示条数: //span[@class="el-pagination__sizes"]//input
+    每页展示条数下拉选择: //div[contains(@class,"el-select-dropdown")]//ul//li[span[text()="{}条/页"]]
+    共多少条数据: //span[@class="el-pagination__total"]
+    表头多数据: //div[@class='el-table__header-wrapper']//table[@class='el-table__header']//tr/th
+    规则悬浮展示: //div[@role="tooltip" and not(contains(@style,'none'))]/div/p
+    修改弹框标题: //span[@class="title-gap" and text()="修改隐私类型"]
+    修改-隐私类型名称: //div[@class="el-dialog__wrapper"]//label[@for="privacyName"]/following-sibling::div//input
+    修改-规则类型: //div[@class="el-dialog__wrapper"]//label[@for="privacyCode"]/following-sibling::div//input
+    修改-描述: //div[@class="el-dialog__wrapper"]//label[@for="remark"]/following-sibling::div//textarea
+    修改确认-弹框标题: //span[@class="el-dialog__title" and text()="修改隐私类型"]
+    修改确认-确认修改: //button//span[text()='确认修改']
+    修改确认-取消修改: //div[@aria-label="修改隐私类型"]//div[@class="el-dialog__footer"]//button//span[text()='取消']
+    修改取消: //span[@class="title-gap" and text()="修改隐私类型"]/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button[span[text()='取消']]
+    修改保存: //span[@class="title-gap" and text()="修改隐私类型"]/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button[span[text()='保存']]
+    弹框提醒: //div[@role='alert']//p[text()='{}']
+    删除弹框-标题: //span[@class="el-dialog__title" and text()='删除隐私类型']
+    删除弹框-隐私类型名称: //label[text()="隐私类型名称:"]/following-sibling::div//span
+    删除弹框-已关联隐私方案-行数: //div[@role='dialog' and @aria-label='删除隐私类型']//div[@class='el-dialog__body']//label[text()='已关联隐私方案:']/following-sibling::div//div//div[@class="el-scrollbar__view"]/div
+    删除弹框-已关联隐私方案-内容: //div[@role='dialog' and @aria-label='删除隐私类型']//div[@class='el-dialog__body']//label[text()='已关联隐私方案:']/following-sibling::div//div//div[@class="el-scrollbar__view"]/div[{}]
+    删除弹框-提示: //label[span[text()='提示:']]/following-sibling::div//span
+    删除弹框-取消: //div[@role="dialog" and @aria-label="删除隐私类型"]//div[@class="el-dialog__footer"]//button//span[text()='取消']
+    确认删除: //button[span[text()='确认删除']]
+    列表暂无数据提示: //div[@class="el-table__empty-block"]//span[text()="暂无数据"]
+
+  详情页:
+    弹框标题: //span[@class="el-dialog__title" and text()='隐私类型详情']
+    隐私类型名称: //div[@class="dialog-detail-info"]//div[text()='隐私类型名称:']/following-sibling::div
+    识别规则: //div[@class="dialog-detail-info"]//div[text()='识别规则:']/following-sibling::div
+    内置自定义: //div[@class="dialog-detail-info"]//div[text()='内置/自定义:']/following-sibling::div
+    规则类别: //div[@class="dialog-detail-info"]//div[text()='规则类别:']/following-sibling::div
+    红线隐私: //div[@class="dialog-detail-info"]//div[text()='红线隐私:']/following-sibling::div
+    关联隐私方案-条数: //div[@class="dialog-detail-info"]//div[text()='关联隐私方案:']/following-sibling::div//div[@class="el-card__body"]/div/div[1]//p
+    关联隐私方案-框: //div[@class="dialog-detail-info"]//div[text()='关联隐私方案:']/following-sibling::div//div[@class="el-card__body"]/div/div[1]
+    关联隐私方案-多条: //div[@class="dialog-detail-info"]//div[text()='关联隐私方案:']/following-sibling::div//div[@class="el-card__body"]/div/div[1]//p[{}]
+    创建时间: //div[@class="dialog-detail-info"]//div[text()='创建时间:']/following-sibling::div
+    创建人: //div[@class="dialog-detail-info"]//div[text()='创建人:']/following-sibling::div
+    描述: //div[@class="dialog-detail-info"]//div[text()='描述:']/following-sibling::div
+    所属部门: //div[@class="dialog-detail-info"]//div[text()='所属部门:']/following-sibling::div
+
+隐私方案-字段隐私:
+  通用:
+    隐私方案一级目录: //span[text()='隐私方案']
+    字段隐私二级目录: //span[text()='字段隐私']
+    隐私类型二级目录: //li//span[text()='隐私类型']
+    隐私类型名称输入框: //label[@for="privacyName"]/following-sibling::div/div/input
+    查询: //button[span[text()="查询"]]
+    删除: //div[@class="el-table__fixed-body-wrapper"]/table/tbody/tr[1]/td[8]/div/div/span[2]/a/span
+    确定: //div[@class="el-message-box__btns"]/button/span[text()="确定"]
+    勾选同意删除: //div[text()="已知晓以上细则，同意更新隐私方案"]
+    确认删除: //button[span[text()="确认删除"]]
+    删除成功: //div[@role="alert"]//p[text()="删除成功"]
+    新建隐私类型: //button//span[text()='新建隐私类型']
+    隐私类型下拉框: //label[span[contains(text(),"隐私类型:")]]/following-sibling::div/div/div/input
+    新建字段隐私按钮: //button//span[text()="新建字段隐私"]
+    隐私类型名称查询输入: //label[@for="privacyName"]/following-sibling::div/div/input
+    隐私类型名称新建输入: //label[text()="隐私类型名称："]/following-sibling::div/div/input
+    规则类别: //label[text()="规则类别："]/following-sibling::div/div/div/input
+    空类型: //div[contains(@class,"el-select-dropdown") and not(contains(@style,"none"))]//div//li//span[text()="空类型"]
+    隐私类型已存在: //div[@class="el-form-item__error" and contains(text(),"隐私类型已存在")]
+    X: //div[@class="basice-title"]/following-sibling::button[@aria-label="Close"]
+    新建隐私类型弹框表头: //span[@class="title-gap" and text()="新建隐私类型"]
+    保存: //button[span[text()="保存"]]
+    关闭: //button/span[contains(text(),"关闭")]
+    分页数字-2: //li[@class="number" and text()="2"]
+    当前页数: //li[@class="number active"]
+    下一页: //button[@class="btn-next"]
+    上一页: //button[@class="btn-prev"]
+    分页器输入框: //input[@type="number"]
+    分页数量选择: //div[@class="el-select el-select--mini"]//div//input
+    20条/页: //li//span[text()="20条/页"]
+    重置按钮: //button[span[text()='重置']]
+    查询按钮: //div[@class="search-with-top"]//button//span[text()="查询"]
+    搜索框输入值: //input[@placeholder="请输入" or @placeholder="请选择"]
+    字段名重复报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    匹配元素: //div[@x-placement="bottom-start"]//div//ul//li[contains(@class,"el-select-dropdown__item") ' \
+          'and not(contains(@style,"none"))]/span[contains(text(),"中文")]
+  查询条件:
+    查询: //button[span[text()="查询"]]
+    Schema名: //div[@class="search-with-top"]//label//span[contains(text(),"Schema名:")]
+    Schema名输入框: //div[@class="search-with-top"]//label[@for="schemaName"]/following-sibling::div//div//input
+    表名称: //div[@class="search-with-top"]//label//span[contains(text(),"表名称:")]
+    表名称-输入框: //div[@class="search-with-top"]//label[@for="tableName"]/following-sibling::div//div//input
+    字段名: //div[@class="search-with-top"]//label//span[contains(text(),"字段名:")]
+    字段名-输入框: //div[@class="search-with-top"]//label[@for="fieldName"]/following-sibling::div//div//input
+    是否生效: //div[@class="search-with-top"]//label//span[contains(text(),"是否生效:")]
+    是否生效-选择框: //div[@class="search-with-top"]//label[@for="isEffect"]/following-sibling::div//div//input
+    隐私类型: //div[@class="search-with-top"]//label//span[contains(text(),"隐私类型:")]
+    隐私类型-选择框: //div[@class="search-with-top"]//label[@for="privacyTypeId"]/following-sibling::div//div//input
+    下拉选择: //li[contains(@class,"el-select-dropdown__item")]//span[text()="{}"]
+  列表字段:
+    全选框: //div[@class="el-table__header-wrapper"]//table//thead//tr//th[1]//div//label//span//span
+    已选择: //span[@class="info"]
+    批量修改: //button//span[text()="批量修改"]
+    批量修改-取消: //div[@aria-label="请选择隐私类型"]//div[@class="el-dialog__footer"]//div/button//span[text()="取消"]
+    修改全部: //button//span[text()="修改全部"]
+    修改本页: //button//span[text()="修改本页"]
+    修改成功: //div[@role="alert"]//p[text()="修改成功"]
+    右上角X: //div[@aria-label="请选择隐私类型"]//button[@aria-label="Close"]
+    批量隐私类型选择框: //div[@class="el-select"]//div//input
+    批量删除: //button//span[text()="批量删除"]
+    批量隐私类型的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr//td[5]//div//div//div//a//span
+    Schema名: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='Schema名']
+    表名: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='表名']
+    字段名: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='字段名']
+    隐私类型: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='隐私类型']
+    创建时间: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='创建时间']
+    是否生效: //div[@class="el-table__header-wrapper"]//table//thead//tr/th//div//span[text()='是否生效']
+    Schema名的值: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//td[2]//div//span//div//div
+    表名的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[3]//div//span//div//div
+    字段名的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[4]//div//span//div//div
+    隐私类型的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[5]/div/div/div/a/span
+    是否生效的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[7]/div/span/span
+    列表字段值: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//td[contains(@class,"is-hidden")]//div
+    详情字段值: //div[@class="el-dialog__body"]//input[@class="el-input__inner"]
+    列表第一行: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]
+    删除列表第一行: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]//div//span[text()="删除"]
+    确认要删除吗: //span[text()="确认要删除吗？"]
+    删除后不可找回: //span[contains(text(),"删除后不可找回，是否确定删除")]
+    删除成功: //div[@role="alert"]//p[text()="删除成功"]
+    当前数据总数: //span[@class="el-pagination__total"]
+    确定: //button[@class="el-button el-button--default el-button--small el-button--primary el-button--mini"]//span[text()="确定"]
+    取消: //button[@class="el-button el-button--default el-button--small el-button--mini"]//span[text()="取消"]
+    查看: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]//div//span[text()="查看"]
+    修改: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]//div//span[text()="修改"]
+    修改字段隐私标题: //span[@class="title-gap" and text()="修改字段隐私"]
+    生效: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]//div//span[text()="生效"]
+    失效: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]//div//span[text()="失效"]
+    按钮生效/失效的值: //div[@class="el-table__fixed-body-wrapper"]//table//tbody//tr[1]//td[8]/div/div/span[3]/a/span
+  新建输入:
+    新建字段隐私按钮: //button//span[text()="新建字段隐私"]
+    新建弹框表头: //div[@class="basice-title"]//span[@class="title-gap"]
+    方案名: //label[@for="schemaName"]/following-sibling::div/div[@class="el-input el-input--small"]/input
+    表名称: //label[@for="tableName"]/following-sibling::div/div[@class="el-input el-input--small"]/input
+    字段名: //label[@for="fieldName"]/following-sibling::div/div[@class="el-input el-input--small"]/input
+    隐私类型: //label[contains(text(),'隐私类型：')]/following-sibling::div/div/div/input
+    隐私类型下拉选择: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//li[contains(@class,"el-select-dropdown__item")]//span[text()="{}"]
+    隐私类型选择-中文姓名信息: //div[@x-placement="bottom-start"]//div//ul//li//span[text()="中文姓名信息"]
+    隐私类型选择-身份证号信息: //div[@x-placement="bottom-start"]//div//ul//li//span[text()="身份证号信息"]
+    隐私类型选择-邮政编码信息: //div[@x-placement="bottom-start"]//div//ul//li//span[text()="邮政编码信息"]
+    隐私类型选择-银行卡号信息: //div[@x-placement="bottom-start"]//div//ul//li//span[text()="银行卡号信息"]
+    隐私类型选择-参数化: //div[@x-placement="bottom-start"]//div//ul//li//span[text()="%s"]
+    隐私类型值: //div[text()='隐私类型:']/following-sibling::div
+    隐私类型参数: //div[@x-placement="bottom-start"]//div//ul//li//span[text()=???
+    是否生效-是: //label[text()='是否生效：']/following-sibling::div/div/div/label/span[text()='是']
+    是否生效-否: //label[text()='是否生效：']/following-sibling::div/div/div/label/span[text()='否']
+    是否生效-参数化: //label[text()="是否生效："]/following-sibling::div/div/div/label/span[text()="%s"]
+    保存按钮: //div[@class="el-dialog__footer"]//button//span[text()='保存']
+    修改成功: //div[@role="alert"]//p[text()="修改成功"]
+    取消: //div[@class="el-dialog__footer"]//div//div//button//span[text()="取消"]
+    新建/修改弹框-X: //div[@class="basice-title"]/following-sibling::button//i
+    删除弹框-X: //button[@class="el-message-box__headerbtn"]
+    关闭: //button[span[text()="关闭"]]
+    确认删除弹框: //span[text()="确认要删除吗？"]
+  字段隐私详情:
+    字段隐私详情表头: //span[text()="字段隐私详情"]
+    Schema名: //div[@class="dialog-detail-info"]//div[text()="Schema名:"]/following-sibling::div
+    表名: //div[@class="dialog-detail-info"]//div[text()="表名:"]/following-sibling::div
+    字段名: //div[@class="dialog-detail-info"]//div[text()="字段名:"]/following-sibling::div
+    隐私类型: //div[@class="dialog-detail-info"]//div[text()="隐私类型:"]/following-sibling::div
+    是否生效: //div[@class="dialog-detail-info"]//div[text()="是否生效:"]/following-sibling::div
+
+脱敏方案-方案配置:
+  查询:
+    脱敏方案名称: //label[@for='name']/following-sibling::div/div/input
+    内置自定义: //label[@for='isBuiltIn']/following-sibling::div/div//input
+    内置自定义下拉选择: //li[contains(@class,"el-select-dropdown__item")]//span[text()="{}"]
+    审批状态: //label[@for='state']/following-sibling::div/div//input
+    审批状态下拉选择: //li[contains(@class,"el-select-dropdown__item")]//span[text()="{}"]
+    更新时间-开始: //label[@for="updateTimeRange"]/following-sibling::div/div/input[1]
+    更新时间-结束: //label[@for="updateTimeRange"]/following-sibling::div/div/input[2]
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+  新建:
+    新建方案: //button//span[text()='新建方案']
+#    弹框标题: //span[@class='title-gap' and text()='新建脱敏方案' ]
+    弹框标题: //span[@class="title-gap"]
+    方案名称: //div[@class='el-dialog__body']//label[@for='name']/following-sibling::div/div/input
+    隐私类型搜索: //input[@placeholder='搜索隐私类型']
+    脱敏规则点击: //div[@class='list-container']//div[text()='{}']/following-sibling::div[1]//input
+    脱敏规则下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//li[span[text()='{}']]
+    备用算法点击: //div[@class='list-container']//div[text()='{}']/following-sibling::div[2]//input
+    备用算法下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//li[span[text()='{}']]
+    默认脱敏算法点击: //label[@for='defaultAlgorithmId']/following-sibling::div/div[1]//input
+    默认算法下拉: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//li[span[text()='{}']]
+    保存按钮: //button//span[text()='保存']
+    取消按钮: //span[text()="新建脱敏方案"]/ancestor::div[@role="dialog"]//div[@class="el-dialog__footer"]//button[span[text()="取消"]]
+    复制取消: //span[text()="复制脱敏方案"]/ancestor::div[@role="dialog"]//div[@class="el-dialog__footer"]//button[span[text()="取消"]]
+    新建叉号关闭: //div[span[@class='title-gap' and text()='新建脱敏方案' ]]/following-sibling::button/i
+    关闭: //div[@class="el-message-box" and not(contains(@style,'none'))]//div[@class='el-message-box__btns']/button
+    描述: //textarea
+    修改取消: //span[text()="修改脱敏方案"]/ancestor::div[3]/div[@class="el-dialog__footer"]//button[span[text()='取消']]
+    隐私类型行数: //div[@class="el-dialog__body"]//div[@class='list-container']/div[not(contains(@style,'none'))]
+    不同隐私类型名称: //div[@class="list-container"]/div[not(contains(@style,'none'))][{}]/div[1]
+    错误提示: //div[@class='el-form-item__error' and contains(text(),'{}')]
+    错误提示不带文本: //div[@class='el-form-item__error']
+    备用脱敏算法问号: //div[text()=' 备用脱敏算法 ']//span/i
+    备用脱敏算法问号-hover: //div[text()="若隐私类型与脱敏算法不匹配，将按照备用脱敏算法进行脱敏"]
+    默认脱敏算法问号: //label[@for="defaultAlgorithmId"]/following-sibling::div//div[@class="dialog-question"]//i
+    默认脱敏算法问号-hover: //div[text()="若数据源中含有其他隐私类型，一律按照默认脱敏算法进行脱敏"]
+    修改方案-文字提示: //body/div[not(contains(@style,'none'))]//div[@class="el-message-box__message"]/div/div[1]/span[2]
+    新建修改成功后弹框: //div[@class="el-message-box" and not(contains(@style,'none'))]//div[@class="el-message-box__message"]
+  列表:
+    脱敏方案-目录: //li[@role='menuitem']//span[text()='脱敏方案']
+    脱敏方案-方案配置: //li[@role='menuitem']//div[span[text()='脱敏方案']]/following-sibling::ul//li[span[text()='方案配置']]
+    列表-首行-按钮-提交: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='提交']
+    列表-首行-按钮-审批: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='审批']
+    审批通过: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class='el-dialog__body']/following-sibling::div//button//span[text()='审批通过']
+    审批-取消按钮: //div[@class='el-dialog__body']/following-sibling::div//button//span[text()='取消']
+    审批退回: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//div[@class="el-dialog__body"]/following-sibling::div//button/span[text()="审批退回"]
+    审批意见: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//label[@for="approvalOpinion"]/following-sibling::div//textarea[@placeholder='若需退回，审批意见不可为空']
+    勾选框-单条: //div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[1]//input/preceding-sibling::span
+    勾选框-单条-按名称: //div[contains(@class,'el-table__body-wrapper')]//tbody//span/div[text()=" {} "]/ancestor::tr/td[1]//input/parent::span
+    勾选框-全选: //div[@class='el-table__header-wrapper']//thead//tr[1]//th[1]//input/preceding-sibling::span
+    脱敏方案名称: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[2]//div[@class="ellipsis el-popover__reference"]
+    内置-自定义: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[3]//span/span
+    创建人: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[4]//span/span
+    更新时间: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[5]//span
+    描述: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[6]//span/div[2]
+    审批状态: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[1]//td[7]//span[contains(@class,'status')]
+    操作-审批: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[text()='审批']
+    操作-提交: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[text()='提交']
+    操作-修改: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[text()='修改']
+    操作-复制: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[text()='复制']
+    操作-更多: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[{}]//span[text()='更多']
+    操作-更多-删除: //body/ul[not(contains(@style,'none'))]//li[@class='el-dropdown-menu__item']//span[text()='删除']
+    操作-更多-查看: //body/ul[not(contains(@style,'none'))]//li[@class='el-dropdown-menu__item']//span[text()='查看']
+    批量提交按钮: //button//span[text()='批量提交']
+    列表行数: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr
+    列表某一行: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]
+    列表-脱敏方案名称: //div[@class='card-container']//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    列表-内置-自定义: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[3]//span/span
+    列表-创建人: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[4]//span/span
+    列表-更新时间: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[5]//span
+    列表-描述-无内容: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[6]//div//span
+    列表-描述-有内容: //div[@class="card-container"]//div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[6]//div[@class="ellipsis el-popover__reference"]
+    列表-审批状态: //div[contains(@class,'el-table__body-wrapper')]//tbody//tr[{}]//td[7]//span[contains(@class,'status')]
+    审批是否通过提醒: //div[@role='alert']//p[text()='{}']
+    弹框提醒: //div[@role='alert']//p[text()='{}']
+    审批意见下方提示: //div[@class="el-form-item__error"]
+    删除弹框-标题: //div[@class='delete-title' and contains(text(),'确定要删除此脱敏方案吗？')]
+    删除弹框-脱敏方案名称: //p/span[text()="脱敏方案名称："]/following-sibling::i
+    删除弹框-关联任务: //p/span[text()="关联任务："]/following-sibling::i
+    删除弹框-删除提醒: //div[@class="delete-msg"]/span[text()="提示："]/following-sibling::span
+    删除弹框-取消: //span[@class="dialog-footer"]//button[span[text()="取消"]]
+    删除弹框-确定: //span[@class="dialog-footer"]//button[span[text()="确定"]]
+    删除弹框-叉号关闭: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__header"]//button[@aria-label="Close"]
+    修改保存: //span[@class="title-gap" and text()="修改脱敏方案"]/ancestor::div[@role="dialog"]/div[@class="el-dialog__footer"]//button[span[text()='保存']]
+    保存关闭: //div[@class="el-message-box" and not(contains(@style,'none'))]//div[@class='el-message-box__btns']/button
+  详情页:
+    标题: //span[@class='el-dialog__title' and text()='脱敏方案详情' ]
+    方案名称: //div[text()="脱敏方案名称:"]/following-sibling::div
+    隐私类型字段: //div[@class="el-dialog__body"]//thead//span[text()='隐私类型']
+    隐私类型内容: //div[@class="table"]//div[@class="main-table"]//tbody//tr[{}]//td[1]//span//div[2]
+    脱敏规则字段: //div[@class="el-dialog__body"]//thead//span[text()='脱敏规则']
+    脱敏规则内容: //div[@class="table"]//div[@class="main-table"]//tbody//tr[{}]//td[2]//span//div[2]
+    备用脱敏算法字段: //div[@class="el-dialog__body"]//thead//span[text()='备用脱敏算法']
+    备用脱敏算法内容: //div[@class="table"]//div[@class="main-table"]//tbody//tr[{}]//td[3]//span//div
+    默认脱敏算法: //div[@class="el-dialog__body"]//div[text()='默认脱敏算法:']/following-sibling::div
+    描述-字段: //div[@class="el-dialog__body"]//div[text()='描述:']
+    描述-内容: //div[@class="el-dialog__body"]//div[text()='描述:']/following-sibling::div
+    创建人: //div[@class="el-dialog__body"]//div[text()='创建人:']/following-sibling::div
+    创建时间: //div[@class="el-dialog__body"]//div[text()='创建时间:']/following-sibling::div
+    审批状态: //div[@class="el-dialog__body"]//div[text()='审批状态:']/following-sibling::div
+    审批人-字段: //div[@class="el-dialog__body"]//div[text()='审批人:']
+    审批人-内容: //div[@class="el-dialog__body"]//div[text()='审批人:']/following-sibling::div
+    审批时间-字段: //div[@class="el-dialog__body"]//div[text()='审批时间:']
+    审批时间-内容: //div[@class="el-dialog__body"]//div[text()='审批时间:']/following-sibling::div
+    关闭按钮: //div[@class="el-dialog__footer"]//button[span[text()='关闭']]
+    隐私类型-对应脱敏规则: //div[text()=' {} ']/ancestor::td/following-sibling::td[1]
+  审批页:
+    隐私类型行数: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//tbody//tr
+    标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[@class='el-dialog__title' and text()='审批脱敏方案' ]
+    脱敏方案名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//label[text()="脱敏方案名称："]/following-sibling::div/div
+    方案细则: //div[@aria-label="审批脱敏方案"]//label[text()="方案细则："]/following-sibling::div
+    隐私类型字段: //div[@aria-label="审批脱敏方案"]//div[@class="el-table__header-wrapper"]//thead/tr/th//span[text()="隐私类型"]
+    脱敏规则字段: //div[@aria-label="审批脱敏方案"]//div[@class="el-table__header-wrapper"]//thead/tr/th//span[text()="脱敏规则"]
+    备用脱敏算法字段: //div[@aria-label="审批脱敏方案"]//div[@class="el-table__header-wrapper"]//thead/tr/th//span[text()="备用脱敏算法"]
+    隐私类型内容:  //div[@aria-label="审批脱敏方案"]//tbody//tr[{}]/td[1]//div[@class="ellipsis el-popover__reference"]
+    脱敏规则内容: //div[contains(text(),'{}')]/ancestor::td/following-sibling::td[1]
+    备用脱敏算法内容: //div[contains(text(),'{}')]/ancestor::td/following-sibling::td[2]
+    默认脱敏算法: //div[@aria-label="审批脱敏方案"]//label[text()="默认脱敏算法："]/following-sibling::div
+    描述: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//label[text()="描述："]/following-sibling::div
+    审批意见: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//label[text()="审批意见："]/following-sibling::div//textarea
+    取消: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//div[@class="el-dialog__body"]/following-sibling::div//button[span[text()="取消"]]
+    审批退回: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//div[@class="el-dialog__body"]/following-sibling::div//button/span[text()="审批退回"]
+    审批通过: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@aria-label="审批脱敏方案"]//div[@class="el-dialog__body"]/following-sibling::div//button[span[text()="审批通过"]]
+    二次审批-修改内容: //label[text()='修改内容：']
+    二次审批-表头多字段: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//tr//th
+    二次审批-表内容行数: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr
+    二次审批-修改项: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[1]/div/span
+    二次审批-隐私类型: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[2]//div[@class="ellipsis el-popover__reference"]
+    二次审批-修改前: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[3]//div/span
+    二次审批-修改后: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[4]//div/span
+    二次审批-修改人: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[5]//div/span
+    二次审批-修改时间: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="table"]//div[contains(@class,"el-table__body-wrapper")]//tbody//tr[{}]//td[6]//div/span
+    审批是否通过提醒: //div[@role='alert']//p[text()='{}']
+
+脱敏方案-脱敏规则:
+  通用:
+    脱敏方案一级目录: //div[@class="el-submenu__title"]//span[text()='脱敏方案']
+    隐私方案一级目录: //div[@class="el-submenu__title"]//span[text()='隐私方案']
+    脱敏规则二级目录: //li[@role="menuitem"]//span[text()='脱敏规则']
+    脱敏算法二级目录: //li[@role="menuitem"]//span[text()='脱敏算法']
+    隐私类型二级目录: //li[@role="menuitem"]//span[text()='隐私类型']
+    新建算法弹框表头: //div[@class="basice-title"]//span[text()="新建算法"]
+    算法已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    X: //div[@class="basice-title"]/following-sibling::button[@aria-label="Close"]
+    代码输入: //div[@class="el-dialog__body"]//label[@for="param.code"]/following-sibling::div/div/textarea
+    保存: //div[@class="el-dialog__body"]/following-sibling::div[@class="el-dialog__footer"]//button//span[text()='保存']
+    算法名称: //div[@class="el-dialog__body"]//label[@for="name"]/following-sibling::div/div/input
+    自定义算法按钮: //button//span[text()='自定义算法']
+  查询:
+    规则名称输入框: //form[@class="el-form el-form--label-top"]//label[@for='name']/following-sibling::div/div/input
+    隐私类型选择框: //div[@class="search-form-item"]//label[@for="privacyId"]/following-sibling::div//input
+    隐私类型-银行卡号信息: //li[@class="el-select-dropdown__item"]//span[text()="银行卡号信息"]
+    隐私类型-自动化测试: //li[@class="el-select-dropdown__item"]//span[text()="自动化测试fred"]
+    隐私类型-中文地址信息: //li[@class="el-select-dropdown__item"]//span[text()="中文地址信息"]
+    隐私类型下拉所有值: //div[contains(@class,"el-select-dropdown el-popper") and not(contains(@style,"none"))]//li//span
+    隐私类型列表所有值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr//td[1]//div//span//span
+    脱敏算法选择框: //div[@class="el-card is-always-shadow"]//label[@for="algorithmId"]/following-sibling::div//input
+    脱敏算法下拉所有值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span
+    脱敏算法列表所有值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr//td[3]//div//span//div[@class="ellipsis el-popover__reference"]
+    脱敏算法-银行卡号脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="银行卡号脱敏算法"]
+    脱敏算法-中文地址脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="中文地址脱敏算法"]
+    脱敏算法-按位替换脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="按位替换脱敏算法"]
+    自定义脱敏算法fred: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="自定义脱敏算法fred"]
+    自定义隐私类型ssr: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="自定义隐私类型ssr"]
+    脱敏方案名称: //label[@for='name']/following-sibling::div/div/input
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+  新建:
+    新建脱敏规则: //button//span[text()='新建脱敏规则']
+    新建脱敏规则弹框: //span[@class="el-dialog__title" and text()="新建脱敏规则"]
+    效果预览弹框: //span[@class="el-dialog__title" and text()="效果预览"]
+    效果预览弹框关闭: //div[@aria-label="效果预览"]//div/button/span[contains(text(),"关闭")]
+    效果预览弹框X按钮: //span[text()="效果预览"]/following-sibling::button[@aria-label="Close"]
+    修改脱敏规则弹框: //div[contains(@class,"el-dialog__wrapper") and not(contains(@style,"none"))]/div/div/span[text()="修改脱敏规则"]
+    修改弹框X按钮: //div[contains(@class,"el-dialog__wrapper") and not(contains(@style,"none"))]/div/div/span[text()="修改脱敏规则"]/following-sibling::button
+    修改弹框算法下方表头内容: //div[@class="el-dialog__body"]//form[2]//div[contains(@class,"item is-required")]//label
+    修改弹框算法下方输入内容: //div[@class="el-dialog__body"]//form[2]//div//input[@type="text"]
+    修改弹框算法下方参数内容: //label[@class="el-checkbox is-checked"]//span[@class="el-checkbox__label"]
+    修改弹框所有表头内容: //div[@class="el-dialog__body"]//label
+    规则名称已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    X按钮: //span[@class="el-dialog__title" and text()="新建脱敏规则"]/following-sibling::button[@aria-label="Close"]
+    规则名称输入框: //div[@class='el-dialog__body']//label[@for='name']/following-sibling::div/div/input
+    最多30字符报错: //div[@class="el-form-item__error" and contains(text(),"最多输入30个字符")]
+    输入字符格式报错: //div[@class="el-form-item__error" and contains(text(),"只能输入中英文，数字，-和_")]
+    描述输入框: //div[@class="el-textarea el-input--small"]//textarea
+    200/200: //span[@class="el-input__count" and text()="200/200"]
+    异常报错: //div[@class="el-form-item__error"]
+    规则名称报错: //label[text()="规则名称："]/following-sibling::div//div[contains(@class,"error") and contains(text(),"请填写名称")]
+    未选择隐私类型报错: //div[@class="el-form-item__error"and(contains(text(),"请选择隐私类型"))]
+    未选择脱敏算法报错: //label[text()="脱敏算法："]/following-sibling::div//div[contains(@class,"error") and contains(text(),"请选择脱敏算法")]
+    新建脱敏规则成功: //div//p[text()="新建脱敏规则成功"]
+    规则名: //div[@class='el-dialog__body']//label[@for='name']/following-sibling::div/div/input
+    隐私类型点击: //div[@class='el-dialog__body']//label[@for='privacyId']/following-sibling::div//input
+    隐私类型-银行卡号信息: //body/div[@class='el-select-dropdown el-popper']//li[span[text()='银行卡号信息']]
+    隐私类型-电子邮件信息: //body/div[@class='el-select-dropdown el-popper']//li[span[text()='电子邮件信息']]
+    隐私类型-中文地址信息: //body/div[@class='el-select-dropdown el-popper']//li[span[text()='中文地址信息']]
+    设为默认规则-是: //span[@class="el-radio__label" and text()="是"]
+    设为默认规则-否: //span[@class="el-radio__label" and text()="否"]
+    隐私类型下拉选择: //div[@class='el-select-dropdown el-popper' and not(contains(@style,'none'))]//li[span[text()='{}']]
+    隐私类型选择: //div[@class='el-select-dropdown el-popper']//li[span[text()='%s']]
+    隐私类型选择框: //div[@class='el-dialog__body']//label[@for='privacyId']/following-sibling::div//input
+    脱敏算法选择框: //div[@class="el-dialog__body"]//label[@for="algorithmId"]/following-sibling::div//input
+    脱敏算法点击: //div[@class='el-dialog__body']//label[@for='algorithmId']/following-sibling::div/div//input
+    脱敏算法-银行卡号脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="银行卡号脱敏算法"]
+    脱敏算法-按位替换脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="按位替换脱敏算法"]
+    脱敏算法-固定替换脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="固定替换脱敏算法"]
+    脱敏算法-中文地址脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="中文地址脱敏算法"]
+    脱敏算法-随机字符串脱敏算法: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="随机字符串脱敏算法"]
+    脱敏算法-信息摘要加密: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="信息摘要加密"]
+    脱敏算法-AES加密: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="AES加密"]
+    脱敏算法下拉所有值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//div[@class="el-scrollbar"]//span
+    脱敏算法下拉选择: //div[@class='el-select-dropdown el-popper' and not(contains(@style,'none'))]//li[span[text()='{}']]
+    脱敏算法选择: //div[@class='el-select-dropdown el-popper']//li[span[text()='%s']]
+    脱敏算法下拉选择1: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    保存按钮: //button//span[text()='保存']
+    确定修改提示: //div[contains(text(),"修改脱敏规则后，以上脱敏方案将同步更新")]
+    确定修改按钮: //button//span[text()='确定修改']
+    修改脱敏规则成功: //div[@class="delete-info"]//p[text()="修改脱敏规则成功"]
+    取消按钮: //div[@class="el-dialog__body"]/following-sibling::div//span[text()='取消']
+    关闭: //div[@class="el-message-box__btns"]//span[contains(text(),"关闭")]
+    改变街道: //label//span[text()="改变街道"]
+    已勾选改变街道: //span[text()="改变街道"]/preceding-sibling::span[contains(@class,"el-checkbox__input is-checked")]
+    还原默认参数: //button//span[text()="还原默认参数"]
+    脱敏前数据: //span[text()="脱敏前数据"]/following-sibling::div/textarea
+    脱敏后数据: //span[text()="脱敏后数据"]/following-sibling::div/textarea
+  列表:
+    规则名称所有值: //div[@class="el-table__body-wrapper is-scrolling-none"]//table//tbody//tr//td[2]//div//span//div//div
+    脱敏算法所有值: //div[@class="el-table__body-wrapper is-scrolling-none"]//table//tbody//tr//td[3]//div//span//div//div
+    列表下拉图标: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//i
+    第一行规则类型值: //div[@class="el-table__body-wrapper is-scrolling-none"]//table//tbody//tr[1]//td[4]//div//span//span
+    第一行新建规则按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="新建规则"]
+    设为默认按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[2]//span[text()="设为默认"]
+    第一行预览按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="预览"]
+    第一行修改按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="修改"]
+    第一行更多按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="更多"]
+    第一行删除按钮: //ul[@class='el-dropdown-menu el-popper' and not(contains(@style,'none'))]//li//span[text()='删除']
+    第二行更多按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[2]//span[text()="更多"]
+    脱敏规则详情页关闭按钮: //div[@aria-label="脱敏规则详情"]//span[text()="关闭"]
+    脱敏规则详情页X按钮: //span[text()="脱敏规则详情"]/following-sibling::button//i
+    脱敏规则详情页弹框: //span[text()="脱敏规则详情"]
+    脱敏规则列表删除按钮: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,"none"))]//span[text()="删除"]
+    确认删除弹框: //span[text()="确认要删除吗？"]
+    确认删除提示信息: //p//span[text()="删除后不可找回，是否确定删除此脱敏规则？"]
+    脱敏规则列表查看按钮: //ul[contains(@class,"el-dropdown-menu") and not(contains(@style,"none"))]//span[text()="查看"]
+    第一行查询值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[@class="el-table__row"]
+    下拉列表所有值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr//td//div//span
+    第二列规则名称值: //div[@class="el-table__body-wrapper is-scrolling-none"]//td[2]//div[@class="ellipsis el-popover__reference"]
+    删除成功: //div[@role="alert"]//p[text()="删除成功"]
+    新增成功: //div[@role="alert"]//p[contains(text(),"新增成功")]
+    确定按钮: //div[@class="el-message-box__btns"]//button//span[text()="确定"]
+    取消按钮: //div[@class="el-message-box__btns"]//button//span[text()="取消"]
+    下一页按钮: //button[@class="btn-next"]
+    上一页按钮: //button[@class="btn-prev"]
+    下一页按钮不能点击: //button[@class="btn-next" and @disabled="disabled"]
+    上一页按钮不能点击: //button[@class="btn-prev" and @disabled="disabled"]
+    当前所在页: //li[@class="number active"]
+    分页筛选按钮: //span[@class="el-pagination__sizes"]//div//div//input
+    40条/页: //li//span[text()="40条/页"]
+    10条/页: //li//span[text()="10条/页"]
+    列表数据统计: //span[@class="el-pagination__total"]
+
+脱敏方案-脱敏算法:
+  查询:
+    下拉选择通用: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    算法名称: //label[@for="name"]/following-sibling::div/div/input
+    算法分类: //label[@for="category"]/following-sibling::div//div/input
+    算法分类下拉选择: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    类型: //label[@for="type"]/following-sibling::div//div/input
+    类型下拉: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    创建方式: //label[@for="isBuiltIn"]/following-sibling::div//div/input
+    创建方式下拉: //body/div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//ul//li[span[text()='{}']]
+    查询按钮: //button//span[text()='查询']
+    重置按钮: //button//span[text()='重置']
+
+  新建:
+    弹框标题: //span[@class="title-gap" and text()="新建算法"]
+    类型名称: //label[@for="type"]/following-sibling::div/div//label//span[2]
+    类型勾选: //label[@for="type"]/following-sibling::div/div//label//span[1]/span
+    自定义算法按钮: //button//span[text()='自定义算法']
+    新建算法弹框表头: //div[@class="basice-title"]//span[text()="新建算法"]
+    算法已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    X: //div[@class="basice-title"]/following-sibling::button[@aria-label="Close"]
+    算法名称: //div[@class="el-dialog__body"]//label[@for="name"]/following-sibling::div/div/input
+    算法名称-下方提示: //label[@for='name']/following-sibling::div//div[@class="el-form-item__error"]
+    代码编译框: //div[@class="el-dialog__body"]//label[@for="param.code"]/following-sibling::div/div/textarea
+    代码编译-问号: //div[@class="dialog-question"]//i
+    代码编译框-下方提示: //label[@for='param.code']/following-sibling::div//div[@class="el-form-item__error"]
+    描述: //div[@class="el-dialog__body"]//label[@for="remark"]/following-sibling::div/div/textarea
+    效果预览-脱敏前: //textarea[@placeholder="请输入要脱敏的数据，多个数据用'|'分隔；"]
+    效果预览-脱敏后: //span[text()="脱敏后数据"]/following-sibling::div//textarea
+    代码输入: //div[@class="el-dialog__body"]//label[@for="param.code"]/following-sibling::div/div/textarea
+    备注: //div[@class="el-dialog__body"]//label[@for="remark"]/following-sibling::div/div/textarea
+    效果预览: //textarea[@placeholder="请输入要脱敏的数据，多个数据用'|'分隔；"]
+    取消: //div[@class="el-dialog__body"]/following-sibling::div[@class="el-dialog__footer"]//button//span[text()='取消']
+    保存: //div[@class="el-dialog__body"]/following-sibling::div[@class="el-dialog__footer"]//button//span[text()='保存']
+    弹框提示: //div[@role='alert']//p[text()='{}']
+
+  列表:
+    首行-所有: //div[@class="main-table"]//div[contains(@class,"el-table__body-wrapper") and not(contains(@style,'none'))]//tbody/tr[1]//td
+    其他行-所有: //div[@class="main-table"]//div[contains(@class,"el-table__body-wrapper") and not(contains(@style,'none'))]//tbody/tr[{}]//td
+    预览按钮: //div[@class="el-table__fixed-body-wrapper"]//tbody//tr[1]//td[6]//span[text()="预览"]
+    修改按钮: //div[@class="el-table__fixed-body-wrapper"]//tbody//tr[1]//td[6]//span[text()="修改"]
+    查看按钮: //div[@class="el-table__fixed-body-wrapper"]//tbody//tr[1]//td[6]//span[text()="查看"]
+    删除按钮: //div[@class="el-table__fixed-body-wrapper"]//tbody//tr[1]//td[6]//span[text()="删除"]
+    删除确定: //div[@aria-label="dialog"]//div[@class="el-message-box__btns"]//button[span[text()='确定']]
+    删除取消: //div[@aria-label="dialog"]//div[@class="el-message-box__btns"]//button[span[text()='取消']]
+
+    预览-标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__header"]//span[@class="el-dialog__title"]
+    预览-脱敏前: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="脱敏前数据"]/following-sibling::div//textarea
+    预览-脱敏后: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//textarea[@placeholder="脱敏后数据"]
+    预览-脱敏前-文字: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="脱敏前数据"]
+    预览-脱敏后-文字: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="脱敏后数据"]
+    预览-算法参数: //label[text()='算法参数：']/following-sibling::div/div/div
+    预览-算法参数-省市街道: //label[text()='算法参数：']/following-sibling::div/div/div/div[{}]
+    预览-效果预览: //label[text()='效果预览：']
+    预览-关闭按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[span[text()='关闭']]
+    预览-关闭叉号:  //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[@aria-label="Close"]
+
+    查看-标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__header"]//span[@class="el-dialog__title"]
+    查看-通用内容: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="{}:"]/following-sibling::div
+    查看-算法名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="创建人:"]/following-sibling::div
+    查看-分类: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="分类:"]/following-sibling::div
+    查看-类型: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="类型:"]/following-sibling::div
+    查看-创建方式: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="创建人:"]/following-sibling::div
+    查看-描述: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="描述:"]/following-sibling::div
+    查看-创建人: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="创建人:"]/following-sibling::div
+    查看-创建时间: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="创建时间:"]/following-sibling::div
+    查看-更新人: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="更新人:"]/following-sibling::div
+    查看-更新时间: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[text()="更新时间:"]/following-sibling::div
+    查看-关闭按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[span[text()='关闭']]
+    查看-关闭叉号: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[@aria-label="Close"]
+    弹框提示: //div[@role='alert']//p[text()='{}']
+
+  修改:
+    标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__header"]//span[@class="title-gap"]
+    算法名称: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//label[text()="算法名称："]/following-sibling::div//input
+    类型-通用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//label[text()="类型："]/following-sibling::div//span[text()="通用"]/preceding-sibling::span/span
+    类型-专用: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//label[text()="类型："]/following-sibling::div//span[text()="专用"]/preceding-sibling::span/span
+    描述: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//label[text()="描述："]/following-sibling::div//textarea
+    脱敏前: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="脱敏前数据"]/following-sibling::div//textarea
+    脱敏后: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//span[text()="脱敏后数据"]/following-sibling::div/textarea
+    还原默认参数: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button//span[text()="还原默认参数"]
+    取消: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button//span[text()="取消"]
+    保存: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button//span[text()="保存"]
+    弹框提示: //div[@role='alert']//p[text()='{}']
+
+    中文地址脱敏算法-参数: //span[@class="el-checkbox__label" and text()="{}"]
+    中文地址脱敏算法-参数勾选: //span[@class="el-checkbox__label" and text()="{}"]/preceding-sibling::span
+    密钥字段: //label[@for="param.key" and text()="密钥："]
+    密钥输入通用: //label[@for="param.key"]/following-sibling::div//input
+    AES加密-密钥: //label[@for="param.key"]/following-sibling::div//input
+    AES加密-输入框下错误提示: //label[@for='param.key']/following-sibling::div//div[@class="el-form-item__error"]
+    按位替换脱敏算法-开始替换位置: //label[@for="param.startPos"]/following-sibling::div//input
+    按位替换脱敏算法-终止替换的位置: //label[@for="param.endPos"]/following-sibling::div//input
+    按位替换脱敏算法-替换字符: //label[@for="param.replaceString"]/following-sibling::div//input
+    按位替换脱敏算法-最小长度: //label[@for="param.minLen"]/following-sibling::div//input
+    按位替换脱敏算法-最大长度: //label[@for="param.maxLen"]/following-sibling::div//input
+    邮箱脱敏算法-参数字段: //label[text()="参数："]/following-sibling::div//span[@class="el-checkbox__label" and text()="改变域名"]
+    邮箱脱敏算法-参数域名勾选: //span[@class="el-checkbox__label" and text()="改变域名"]/preceding-sibling::span
+
+    固定替换-起始位置: //label[@for="param.startPos"]/following-sibling::div//input
+    固定替换-终止位置: //label[@for="param.endPos"]/following-sibling::div//input
+    固定替换-替换字符: //label[@for="param.replaceString"]/following-sibling::div//input
+
+    信息摘要加密-脱敏长度: //label[text()='脱敏长度：']/following-sibling::div//input
+    信息摘要加密-脱敏长度-下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]/div[@class="el-scrollbar"]//li[span[text()="{}"]]
+    信息摘要加密-参数字段内容: //label[text()='参数：']/following-sibling::div//label//span[2]
+    信息摘要加密-参数勾选: //label[text()='参数：']/following-sibling::div//input/preceding-sibling::span
+    信息摘要加密-保留起始位: //label[@for="param.startPos"]/following-sibling::div//input
+    信息摘要加密-保留终止位: //label[@for="param.endPos"]/following-sibling::div//input
+
+    姓名脱敏算法-参数内容: //label[text()='参数：']/following-sibling::div//label//span[2]
+    姓名脱敏算法-参数勾选: //label[text()='参数：']/following-sibling::div//label//span[1]/span
+
+    身份证脱敏算法-参数内容: //label[text()='参数：']/following-sibling::div/div[{}]//label//span[2]
+    身份证脱敏算法-参数勾选: //label[text()='参数：']/following-sibling::div/div[{}]//label//span[1]/span
+    身份证-向前变化天数: //label[@for="param.rangeBefore" and text()='生日日期向前变化天数：']/following-sibling::div//input
+    身份证-向后变化天数: //label[@for="param.rangeAfter" and text()='生日日期向后变化天数：']/following-sibling::div//input
+
+    邮政编码-参数内容-改变省份: //label[text()='参数：']/following-sibling::div//label//span[text()="改变省份"]
+    邮政编码-参数内容-改变城市: //label[text()='参数：']/following-sibling::div//label//span[text()="改变城市"]
+    邮政编码-参数勾选: //label[text()='参数：']/following-sibling::div/div/div[{}]//label//span[1]/span
+
+    随机字符串脱敏-参数内容-所有: //label[text()='参数：']/following-sibling::div/div//label//span[2]
+    随机字符串脱敏-参数内容-单个: //label[text()='参数：']/following-sibling::div/div[{}]//label//span[2]
+    随机字符串脱敏-参数勾选: //label[text()='参数：']/following-sibling::div/div[{}]//label//span[1]/span
+    随机字符串脱敏-开始变换的位置: //label[@for="param.startPos"]/following-sibling::div//input
+    随机字符串脱敏-结束变换的位置: //label[@for="param.endPos"]/following-sibling::div//input
+
+    数据分箱算法-最小值: //label[@for="param.min"]/following-sibling::div//input
+    数据分箱算法-区间大小: //label[@for="param.range"]/following-sibling::div//input
+    数据分箱算法-取值方式: //label[text()="取值方式："]/following-sibling::div//input
+    数据分箱算法-取值方式-下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style,'none'))]//div[@class="el-scrollbar"]//li[span[text()='{}']]
+
+    日期类型算法-改变年份勾选: //label[text()='参数：']/following-sibling::div/div//label//span[1]/span
+    日期类型算法-向前天数: //label[@for="param.rangeBefore"]/following-sibling::div//input
+    日期类型算法-向后天数: //label[@for="param.rangeAfter"]/following-sibling::div//input
+
+访问管理-访问分组:
+  通用:
+    访问管理一级目录: //div[@class="el-submenu__title"]//span[text()='访问管理']
+    访问分组二级目录: //li[@role="menuitem"]//span[text()='访问分组']
+    脱敏任务二级目录: //li[@role="menuitem"]//span[text()='脱敏任务']
+    数据连接二级目录: //li[@role="menuitem"]//span[text()='数据连接']
+    新建脱敏任务按钮: //button//span[text()="新建任务"]
+    新建数据连接按钮: //button//span[text()="新建连接"]
+    暂无数据: //span[text()="暂无数据"]
+    脱敏任务名称已存在: //div[@class="el-form-item__error" and contains(text(),"已存在名称为")]
+    数据连接名称重复: //div[@class="el-form-item__error" and contains(text(),"名称重复")]
+    任务名称输入框: //label[@for="taskName"]/following-sibling::div//input
+    数据源下拉框: //label[@for="dataSource"]/following-sibling::div//input
+    数据源类型下拉框: //label[@for="dataSourceType"]/following-sibling::div//input
+    代理端口输入框: //label[@for="proxyPort"]/following-sibling::div//input
+    新建脱敏任务保存按钮: //div[@class="btn-content"]//span[text()="保存"]
+    访问分组唯一下拉选择值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="{}"]
+    脱敏任务操作栏提交按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="提交"]
+    脱敏任务操作栏审批按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="审批"]
+    脱敏任务操作栏启动按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="启动"]
+    脱敏任务操作栏终止按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="终止"]
+    脱敏任务审批通过按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="审批通过"]
+    脱敏任务操作栏更多按钮: //div[@class="el-table__fixed-body-wrapper"]//span[text()="更多"]
+    脱敏任务操作栏删除按钮: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,"none"))]//span[text()="删除"]
+    脱敏任务删除确定按钮: //div[@class="el-message-box__btns"]//button//span[text()="确定"]
+    访问来源-访问分组下拉框: //label[@for="relations[0]"]/following-sibling::div//div[contains(@class,"first")]/div/div/input
+    访问来源-安全方案下拉框: //label[@for="relations[0]"]/following-sibling::div//div[contains(@class,"third")]/div/div/input
+    访问来源-访问文组下拉所有值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,'none'))]//ul//li//span
+    连接名称输入框: //label[@for="aliasName"]/following-sibling::div//input
+    查询按钮: //div[@class="default-btn"]//button//span[text()="查询"]
+    新建数据连接ip地址输入框: //label[@for="host"]/following-sibling::div//input
+    新建数据连接端口输入框: //label[@for="port"]/following-sibling::div//input
+    新建数据连接数据库名称输入框: //label[@for="dbName"]/following-sibling::div//input
+    新建数据连接用户名输入框: //label[@for="userName"]/following-sibling::div//input
+    新建数据连接密码输入框: //label[@for="password"]/following-sibling::div//input
+    发现部分数据TSMSYS: //div[@class="label"]//span[contains(text(),"TSMSYS")]/ancestor::div[contains(@class,"check-box")]/div[@class="box"]
+    发现部分数据testor: //div[@class="label"]//span[contains(text(),"testor")]/ancestor::div[contains(@class,"check-box")]/div[@class="box"]
+  查询:
+    分组名称输入框: //div[@class="search-form-item"]//label[@for="accessGroupName"]/following-sibling::div//input
+    分组类别选择框: //div[@class="search-form-item"]//label[@for="groupType"]/following-sibling::div//input
+    生效时间输入框: //div[@class="search-form-item"]//label[@for="effectStartTime"]/following-sibling::div//input
+    失效时间输入框: //div[@class="search-form-item"]//label[@for="effectEndTime"]/following-sibling::div//input
+    查询按钮: //div[@class="default-btn"]//button//span[contains(text(),"查询")]
+    重置按钮: //div[@class="default-btn"]//button//span[contains(text(),"重置")]
+  列表:
+    列表第一行修改按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//td[7]//span[text()="修改"]
+    列表第一行删除按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//td[7]//span[text()="删除"]
+    列表第一行查看按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//td[7]//span[text()="查看"]
+    列表分组名称值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[2]//div[@class="ellipsis el-popover__reference"]
+    列表分组类别值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[3]//div[@class="ellipsis el-popover__reference"]
+    列表生效时间值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[4]//div[@class="ellipsis el-popover__reference"]
+    列表失效时间值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[5]//div[@class="ellipsis el-popover__reference"]
+    列表描述值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[6]//div[@class="ellipsis el-popover__reference"]
+    列表操作栏按钮值: //div[@class="el-table__body-wrapper is-scrolling-none"]//tr[1]//td[7]//a//span
+    列表操作栏修改按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="修改"]
+    修改分组弹框表头: //div[@class="basice-title"]//span[@class="title-gap" and text()="修改分组"]
+    列表操作栏删除按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="删除"]
+    确认删除弹框: //div[@class="el-message-box__message"]//span[text()="确认要删除吗？"]
+    确认删除弹框X按钮: //div[@class="el-message-box__header"]//button[@aria-label="Close"]
+    确认删除弹框取消按钮: //div[@class="el-message-box__btns"]//button//span[text()="取消"]
+    确认删除弹框确定按钮: //div[@class="el-message-box__btns"]//button//span[text()="确定"]
+    列表数据下拉折叠图标: //div[@class="el-table__body-wrapper is-scrolling-none"]//i
+    列表下拉数据值: //div[@class="el-table__body-wrapper is-scrolling-none"]//div[@class="expend-box"]//div
+    删除确定按钮: //div[@class="el-message-box__wrapper" and not(contains(@style,"none"))]//button//span[text()="确定"]
+    删除取消按钮: //div[@class="el-message-box__wrapper" and not(contains(@style,"none"))]//button//span[text()="取消"]
+    删除成功: //div[@role="alert"]//p[text()="删除成功"]
+    列表操作栏查看按钮: //div[@class="el-table__fixed-body-wrapper"]//tr[1]//span[text()="查看"]
+    查看分组弹框表头: //div[@class="el-dialog__header"]//span[@class="el-dialog__title" and text()="查看分组"]
+    查看分组弹框关闭按钮: //div[@class="el-dialog__footer"]/div/button/span[text()="关闭"]
+  新建:
+    新建分组按钮: //button//span[text()="新建分组"]
+    分组弹框表头: //div[@class="basice-title"]//span[contains(text(),"分组")]
+    分组名称重复: //div[@class="el-form-item__error" and contains(text(),"分组名称重复")]
+    查看分组弹框X按钮: //span[text()="查看分组"]/parent::div//following-sibling::button/i
+    修改分组弹框X按钮: //span[text()="修改分组"]/parent::div/following-sibling::button/i
+    X按钮: //div[@class="basice-title"]/following-sibling::button/i
+    弹框所有未折叠表头: //div[@class="el-dialog__body" and not(contains(@style,"none"))]/form/div/label
+    弹框所有按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button
+    保存按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="保存"]
+    取消按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="取消"]
+    有效时间选择器确定按钮: //div[@class="el-picker-panel__footer"]//button//span[contains(text(),"确定")]
+    有效时间选择器清空按钮: //div[@class="el-picker-panel__footer"]//button//span[contains(text(),"清空")]
+    时间选择器确定按钮: //div[@class="el-time-panel__footer"]//button//span[contains(text(),"确定")]
+    请填写名称报错: //div[@class="el-form-item__error" and contains(text(),"请填写名称")]
+    名称最多30字符报错: //div[@class="el-form-item__error" and contains(text(),"最多输入30个字符")]
+    非法字符输入报错: //div[@class="el-form-item__error" and contains(text(),"只能输入中英文，数字，-和_")]
+    请填写有效时间报错: //div[@class="el-form-item__error" and contains(text(),"请填写有效时间")]
+    访问分组唯一下拉选择值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li//span[text()="{}"]
+    有效时间输入框: //label[text()="有效时间："]/following-sibling::div//input[@placeholder="开始时间"]
+    开始日期: //div[@class="el-picker-panel__body"]//input[@placeholder="开始日期"]
+    开始时间: //div[@class="el-picker-panel__body"]//input[@placeholder="开始时间"]
+    结束日期: //div[@class="el-picker-panel__body"]//input[@placeholder="结束日期"]
+    结束时间: //div[@class="el-picker-panel__body"]//input[@placeholder="结束时间"]
+    分组信息问号: //label[@class="el-form-item__label"]//span[contains(text(),"分组信息")]//i
+    分组信息问号内容显示: //div[contains(text(),"分组信息中的四个信息") and @aria-hidden="false"]
+    访问用户IP下拉框: //label[@for="clientIp.0.value"]/following-sibling::div//div[@class="el-input-group__prepend"]//input
+    第二行访问用户IP下拉框: //label[@for="clientIp.1.value"]/following-sibling::div//div[@class="el-input-group__prepend"]//input
+    第二行访问用户IP向上按钮: //label[@for="clientIp.1.value"]/following-sibling::div//i[@class="iconfont icon-xiangshang"]
+    第二行访问用户IP输入框: //label[@for="clientIp.1.value"]/following-sibling::div//div[@class="el-input-group__prepend"]/following-sibling::input
+    第三行访问用户IP下拉框: //label[@for="clientIp.2.value"]/following-sibling::div//div[@class="el-input-group__prepend"]//input
+    第三行访问用户IP删除按钮: //label[@for="clientIp.2.value"]/following-sibling::div//span[@class="add-remove-btn"]
+    访问分组弹框唯一下拉列表值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li
+    访问用户IP输入不合法报错: //label[@for="clientIp.0.value"]/following-sibling::div//div[@class="el-form-item__error"]
+    访问用户IP输入框清空按钮: //label[@for="clientIp.0.value"]/following-sibling::div//i[contains(@class,"input__clear")]
+    访问用户IP输入框增加按钮: //label[@for="clientIp.0.value"]/following-sibling::div//i[@class="iconfont icon-zengjia"]
+    客户端工具下拉框: //span[text()="客户端工具："]/parent::label/following-sibling::div//div[@class="el-input-group__prepend"]//input
+    第二行客户端工具下拉框: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[1]//div[@class="el-input-group__prepend"]//input
+    第二行客户端工具输入框: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[1]//div[@class="el-input-group__prepend"]/following-sibling::input
+    第二行客户端工具数据存在: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[4]
+    第三行客户端工具数据存在: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[5]
+    第二行数据库用户数据存在: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[3]
+    第三行数据库用户数据存在: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[4]
+    第三行客户端工具数据删除按钮: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[2]//div[@class="add-remove-btn"]
+    客户端工具增加按钮: //span[text()="客户端工具："]/parent::label/following-sibling::div//i[@class="iconfont icon-zengjia"]
+    第二行客户端工具向上按钮: //span[text()="客户端工具："]/parent::label/parent::div/following-sibling::div[1]//i[@class="iconfont icon-xiangshang"]
+    数据库用户增加按钮: //span[text()="数据库用户："]/parent::label/following-sibling::div//i[@class="iconfont icon-zengjia"]
+    第二行数据库用户下拉框: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[1]//div[@class="el-input-group__prepend"]//input
+    数据库用户输入框: //span[text()="数据库用户："]/parent::label/following-sibling::div//div[@class="el-input-group__prepend"]/following-sibling::input
+    第二行数据库用户输入框: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[1]//div[@class="el-input-group__prepend"]/following-sibling::input
+    第二行数据库用户向上按钮: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[1]//i[@class="iconfont icon-xiangshang"]
+    第三行数据库用户数据删除按钮: //span[text()="数据库用户："]/parent::label/parent::div/following-sibling::div[2]//div[@class="add-remove-btn"]
+    访问时间开始输入框: //span[text()="访问时间："]/parent::label/following-sibling::div//input[1]
+    访问时间结束输入框: //span[text()="访问时间："]/parent::label/following-sibling::div//input[2]
+    访问时间选择器确定按钮: //div[@class="el-time-range-picker el-picker-panel el-popper" and not(contains(@style,"none"))]//button[text()="确定"]
+    第二行访问时间开始输入框: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[1]//input[1]
+    第二行访问时间结束输入框: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[1]//input[2]
+    第二行访问时间: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[2]
+    第三行访问时间: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[3]
+    第三行访问时间删除按钮: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[2]//div[@class="add-remove-btn"]
+    访问时间增加按钮: //span[text()="访问时间："]/parent::label/following-sibling::div//i[@class="iconfont icon-zengjia"]
+    有效时间数据清空按钮: //label[@for="effectTime"]/following-sibling::div//i[@class="el-input__icon el-range__close-icon"]
+    访问用户IP数据清空按钮: //label[@for="clientIp.0.value"]/following-sibling::div//i[contains(@class,"input__clear")]
+    客户端工具数据清空按钮: //span[text()="客户端工具："]/parent::label/following-sibling::div//i[contains(@class,"input__clear")]
+    数据库用户数据清空按钮: //span[text()="数据库用户："]/parent::label/following-sibling::div//i[contains(@class,"input__clear")]
+    访问时间数据清空按钮: //span[text()="访问时间："]/parent::label/following-sibling::div//i[@class="el-input__icon el-range__close-icon"]
+    第二行访问时间向上按钮: //span[text()="访问时间："]/parent::label/parent::div/following-sibling::div[1]//i[@class="iconfont icon-xiangshang"]
+    时间选择器确定按钮无法点击: //button[@disabled="disabled" and text()="确定"]
+    访问分组弹框提示: //div[@role="alert"]//p[text()="{}"]
+    访问文组字段报错提示: //div[@class="el-form-item__error" and contains(text(),"{}")]
+    新建分组描述输入框: //div[@class="el-textarea el-input--small"]//textarea
+    新建分组描述输入框字数统计: //div[@class="el-textarea el-input--small"]//span
+    分组类别下拉列表值: //div[@class="el-select-dropdown el-popper" and not(contains(@style,"none"))]//li
+    分组类别下拉框: //label[text()="分组类别："]/following-sibling::div//input
+    分组名称输入框: //label[text()="分组名称："]/following-sibling::div//input
+    访问用户IP输入框: //label[@for="clientIp.0.value"]/following-sibling::div//div[@class="el-input-group__prepend"]/following-sibling::input
+    客户端工具输入框: //span[text()="客户端工具："]/parent::label/following-sibling::div//div[@class="el-input-group__prepend"]/following-sibling::input
+    数据库用户下拉框: //span[text()="数据库用户："]/parent::label/following-sibling::div//div[@class="el-input-group__prepend"]//input
+    测试分组信息下拉图标: //div[@class="test-group"]/div/span//i
+    测试分组信息-测试按钮: //a//span[text()="测试"]
+    测试分组信息展开表头: //div[@class="el-dialog__body"]//div[not(contains(@style,"none"))]/form/div/label
+    测试分组信息-访问用户IP输入框: //div[not(contains(@style,"none"))]//label[@for="checkClientIp"]/following-sibling::div//input
+    测试分组信息-客户端工具输入框: //div[not(contains(@style,"none"))]//label[@for="checkClientProgram"]/following-sibling::div//input
+    测试分组信息-数据库用户输入框: //div[not(contains(@style,"none"))]//label[@for="checkDbUser"]/following-sibling::div//input
+    测试分组信息-访问时间输入框: //div[not(contains(@style,"none"))]//label[@for="checkConnectTime"]/following-sibling::div//input
+
+访问管理-安全规则:
+  通用:
+    安全规则弹框提示: //div[@role="alert"]//p[contains(text(),"{}")]
+    访问管理一级目录: //div[@class="el-submenu__title"]//span[text()='访问管理']
+    安全规则二级目录: //li[@role="menuitem"]//span[text()='安全规则']
+    安全方案二级目录: //li[@role="menuitem"]//span[text()='安全方案']
+    风险分析二级目录: //li[@role="menuitem"]//span[text()='风险分析']
+    新增方案按钮: //button//span[text()="新增方案"]
+    安全方案名称输入框: //div[@class="el-dialog__wrapper"]//label[@for="planName"]/following-sibling::div//input
+    安全方案已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    安全方案名称搜索输入框: //div[@class="search-form-item"]//label[@for="planName"]/following-sibling::div//input
+    安全方案搜索查询按钮: //div[@class="default-btn"]//span[text()="查询"]
+    安全方案搜索后指定按钮: //div[@class="el-table__fixed-body-wrapper"]//span[text()="{}"]
+    安全方案更多-指定按钮: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,"none"))]//span[text()="{}"]
+    弹框X按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button[@aria-label="Close"]//i
+    新增方案弹框内置规则折叠按钮: //span[text()="内置安全规则组"]/preceding-sibling::span
+    新增方案弹框指定规则折叠按钮: //span[text()="{}"]/preceding-sibling::span
+    内置安全规则组全选按钮: //span[text()="内置安全规则组"]/preceding-sibling::label//span[@class="el-checkbox__inner"]
+    内置安全规则勾选器: //span[text()="{}"]/preceding-sibling::label//span[@class="el-checkbox__inner"]
+    新增安全方案保存按钮: //div[@class="el-dialog__footer"]//button//span[text()="保存"]
+    内置安全规则组折叠栏: //div[@class="ellipsis el-popover__reference" and contains(text(),"内置安全规则组")]
+    内置安全规则组操作按钮: //div[contains(@class,"reference") and contains(text(),"内置安全规则组")]/parent::span/parent::span/following-sibling::span//span[text()="操作"]
+    内置安全规则所有值: //div[contains(@class,"reference") and contains(text(),"内置安全规则组")]/ancestor::div[@class="el-tree-node__content"]/following-sibling::div//div[contains(@class,"reference")]
+    带默认安全规则值: //span[@class="default-tag"]/parent::span/following-sibling::span//div[@class="ellipsis el-popover__reference"]
+  查询:
+    安全方案名称输入框: //div[@class="search-form-item"]//label[@for="planName"]/following-sibling::div//input
+    安全方案创建人输入框: //div[@class="search-form-item"]//label[@for="createUser"]/following-sibling::div//input
+    安全方案审批状态输入框: //div[@class="search-form-item"]//label[@for="status"]/following-sibling::div//input
+    安全方案查询按钮: //div[@class="search-with-top"]//button//span[text()="查询"]
+    安全规则搜索输入框: //div[@class="filter-top"]//input
+  列表:
+    安全方案列表提交按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="提交"]
+    安全方案列表修改按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="修改"]
+    安全方案列表复制按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="复制"]
+    安全方案列表审批按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="审批"]
+    安全方案审批通过按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="审批通过"]
+    指定规则后的操作按钮: //span//div[contains(text(),"{}")]/ancestor::span[@class="node-popover"]/parent::span/following-sibling::span//span[text()="操作"]
+    安全规则操作选择指定: //ul[contains(@class,"dropdown-menu") and not(contains(@style,"none"))]//span[text()="{}"]
+    安全规则删除确定按钮: //div[@class="el-message-box" and not(contains(@style,"none"))]//span[contains(text(),"确定")]
+    指定规则名操作按钮: //div[@class="ellipsis el-popover__reference" and contains(text(),"{}")]/ancestor::div[@class="el-tree-node__content"]//span[text()="操作"]
+    指定规则名前默认标签: //span//div[contains(text(),"{}")]/ancestor::div[@class="el-tree-node__content"]//span[text()="默认"]
+  新建:
+    新增规则组按钮: //button//span[text()="新增规则组"]
+    新增规则组表头: //div[@class="basice-title"]//span[text()="新增规则组"]
+    名称已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    新增规则组名称输入框: //div[@class="el-dialog__wrapper"]//label[@for="ruleName"]/following-sibling::div//input
+    新增规则组保存按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//span[text()="保存"]
+    新增规则组取消按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//span[text()="取消"]
+    新建规则保存按钮: //div[@class="btn-bottom"]//span[text()="保存"]
+    新建规则取消按钮: //div[@class="btn-bottom"]//span[text()="取消"]
+    规则组下拉框: //label[@for="parentUuid"]/following-sibling::div//input
+    规则风险下拉框: //label[@for="riskLevel"]/following-sibling::div//input
+    适用数据库类型下拉框: //label[@for="groupDbType"]/following-sibling::div//input
+    描述输入框: //label[@for="description"]/following-sibling::div//textarea
+    规则名称输入框: //div[@role="tabpanel"]//label[@for="ruleName"]/following-sibling::div//input
+    语句内容输入框: //label[@for="sqlCommand"]/following-sibling::div//textarea
+    测试规则输入框: //label[text()="测试规则："]/following-sibling::div//textarea
+    定位方式下拉框: //label[text()="定义方式："]/following-sibling::div//input
+    SQL操作下拉框: //label[@for="operTypes"]/following-sibling::div//input[@placeholder="请选择"]
+    安全操作下拉框: //span[contains(text(),"安全操作")]/ancestor::label/following-sibling::div//input
+    安全规则唯一下拉选择值: //div[contains(@class,"el-select-dropdown") and not(contains(@style,"none"))]//li//span[text()="{}"]
+    安全规则下拉所有值: //div[contains(@class,"el-select-dropdown el-popper") and not(contains(@style,"none"))]//li/span
+
+访问管理-安全方案:
+  通用:
+    安全方案弹框提示: //div[@role="alert"]//p[contains(text(),"{}")]
+    访问管理一级目录: //div[@class="el-submenu__title"]//span[text()='访问管理']
+    安全方案二级目录: //li[@role="menuitem"]//span[text()='安全方案']
+    安全规则二级目录: //li[@role="menuitem"]//span[text()='安全规则']
+    弹框X按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button[@aria-label="Close"]//i
+  查询:
+    安全方案名称搜索输入框: //div[@class="search-form-item"]//label[@for="planName"]/following-sibling::div//input
+    安全方案搜索查询按钮: //div[@class="default-btn"]//span[text()="查询"]
+    安全方案搜索重置按钮: //div[@class="default-btn"]//span[text()="重置"]
+    安全规则搜索输入框: //div[@class="filter-top"]//input
+  列表:
+    安全方案搜索后指定按钮: //div[@class="el-table__fixed-body-wrapper"]//span[text()="{}"]
+    安全方案更多-指定按钮: //ul[@class="el-dropdown-menu el-popper" and not(contains(@style,"none"))]//span[text()="{}"]
+    安全方案列表指定按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="{}"]
+    安全方案列表指定按钮a属性: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="提交"]/parent::a
+    安全方案列表提交按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="提交"]
+    安全方案列表修改按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="修改"]
+    安全方案列表复制按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="复制"]
+    安全方案列表审批按钮: //div[@class="el-table__fixed-body-wrapper"]//span[@class="operate-btn"]//span[text()="审批"]
+    安全方案审批通过按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="审批通过"]
+    安全方案审批退回按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="审批退回"]
+    指定规则后的操作按钮: //span//div[contains(text(),"{}")]/ancestor::span[@class="node-popover"]/parent::span/following-sibling::span//span[text()="操作"]
+    安全规则操作选择指定: //ul[contains(@class,"dropdown-menu") and not(contains(@style,"none"))]//span[text()="{}"]
+  新建:
+    新增规则组按钮: //button//span[text()="新增规则组"]
+    新增规则组名称输入框: //div[@class="el-dialog__wrapper"]//label[@for="ruleName"]/following-sibling::div//input
+    新增规则组保存按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//span[text()="保存"]
+    新增规则组取消按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//span[text()="取消"]
+    新建规则保存按钮: //div[@class="btn-bottom"]//span[text()="保存"]
+    新增方案按钮: //button//span[text()="新增方案"]
+    安全方案弹框: //span[@class="title-gap" and contains(text(),"安全方案")]
+    安全方案名称输入框: //div[@class="el-dialog__wrapper"]//label[@for="planName"]/following-sibling::div//input
+    安全方案描述输入框: //div[@class="el-dialog__wrapper"]//label[@for="remark"]/following-sibling::div//textarea
+    安全方案已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    新增方案弹框指定规则折叠按钮: //span[text()="{}"]/preceding-sibling::span
+    内置安全规则勾选器: //span[text()="{}"]/preceding-sibling::label//span[@class="el-checkbox__inner"]
+    新增安全方案操作按钮: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="{}"]
+    新增安全方案保存按钮: //div[@class="el-dialog__footer"]//button//span[text()="保存"]
+    名称已存在报错: //div[@class="el-form-item__error" and contains(text(),"已存在")]
+    规则名称输入框: //div[@role="tabpanel"]//label[@for="ruleName"]/following-sibling::div//input
+    语句内容输入框: //label[@for="sqlCommand"]/following-sibling::div//textarea
+    选择规则输入框: //label[@for="ruleIds"]/following-sibling::div//input[@type="text"]
+
+系统配置-参数配置:
+  通用:
+    目录: //li[@role='menuitem']//span[text()='{}']
+    顶部tab栏: //ul[@class="header"]//li[text()="{}"]
+    通用按钮: //button//span[text()='{}']
+    输入框: //label[@for='{}']/following-sibling::div/div/input
+    列表首行按钮: //div[@class='el-table__fixed-body-wrapper']//tbody//tr[1]//span[text()='{}']
+    错误提示: //div[@class='el-form-item__error']
+    alert弹框: //div[@role='alert']//p[contains(text(),'{}')]
+    删除确认: //div[@class='el-message-box__btns']//button[span[text()='确定']]
+    弹框-确定取消: //div[@class="el-dialog__wrapper" and not(contains(@style,"none"))]//button//span[text()="{}"]
+    还原默认设置-按钮: //div[@class="step-btns"]//button//span[text()='还原默认设置']
+    保存修改-按钮: //div[@class="step-btns"]//button//span[text()='保存修改']
+    下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()='{}']]
+
+  连接管理参数:
+    系统schema-设置: //span[text()='{}']/ancestor::div[@class="container-box"]//div[contains(text(),"系统schema")]/following-sibling::div//span[text()='设置']
+    系统schema-还原默认设置: //span[text()='{}']/ancestor::div[@class="container-box"]//div[contains(text(),"系统schema")]/following-sibling::div//span[text()='还原默认设置']
+    连接阶段放行操作-问号: //span[text()='{}']/ancestor::div[@class="container-box"]//div[contains(text(),"连接阶段放行操作")]//span//i
+    连接阶段放行操作-设置: //span[text()='{}']/ancestor::div[@class="container-box"]//div[contains(text(),"连接阶段放行操作")]/following-sibling::div//span[text()='设置']
+
+    系统schema-弹框-标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="dialog-title"]/div[1]
+    系统schema-弹框-关键字筛选输入: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="dialog-title"]//input
+    系统schema-弹框-关闭叉号: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//button[@aria-label="Close"]//i
+    系统schema-弹框-加号: //i[contains(@class,'icon-zengjia')]
+    系统schema-弹框-减号-多个: //i[contains(@class,'icon-jianshao')]
+    系统schema-弹框-减号-某行: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div[{}]//i
+    系统schema-弹框-行数: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div
+    系统schema-弹框-schema输入-某行: (//div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div[{}]//input)[1]
+    系统schema-弹框-table输入-某行: (//div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div[{}]//input)[2]
+    系统schema-弹框-取消: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__footer"]//button//span[text()='取消']
+    系统schema-弹框-保存: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__footer"]//button//span[text()='保存']
+
+    放行操作-弹框-标题: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="dialog-title"]/div[1]
+    放行操作-弹框-关键字筛选输入: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="dialog-title"]//input
+    放行操作-弹框-加号: //i[contains(@class,'icon-zengjia')]
+    放行操作-弹框-行数: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div
+    放行操作-弹框-减号-多个: //i[contains(@class,'icon-jianshao')]
+    放行操作-弹框-减号-某行: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div[{}]//i
+    放行操作-弹框-输入-某行: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__body"]/form/div[{}]//input
+    放行操作-弹框-取消: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__footer"]//button//span[text()='取消']
+    放行操作-弹框-保存: //div[@class="el-dialog__wrapper" and not(contains(@style,'none'))]//div[@class="el-dialog__footer"]//button//span[text()='保存']
+
+    自动检测连接-开关: //div[contains(text(),'自动检测数据连接状态') and not(contains(@style,'none'))]/following-sibling::div//span[@class="el-switch__core"]
+    自动检测连接-是-激活判断: //div[contains(text(),'自动检测数据连接状态') and not(contains(@style,'none'))]/following-sibling::div//span[span[text()='是']]
+
+    自动检测连接-策略-输入框: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[1]
+    自动检测连接-下拉选择: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li[span[text()='{}']]
+    自动检测连接-下拉列表内容: //div[contains(@class,'el-select-dropdown') and not(contains(@style, 'none'))]//div[@class="el-scrollbar"]//ul//li
+
+    自动检测连接-每隔-输入时间: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[2]
+    自动检测连接-每隔-时间减号: //div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//span[@class="el-input-number__decrease"]
+    自动检测连接-每隔-时间加号: //div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//span[@class="el-input-number__increase"]
+    自动检测连接-每天-输入时间: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[2]
+    自动检测连接-每周-周几点击: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[2]
+    自动检测连接-每周-输入时间: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[3]
+    自动检测连接-每月-月号点击: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[2]
+    自动检测连接-每月-输入时间: (//div[contains(@class,"schedule-form")]/div[not(contains(@style,'none'))]//input)[3]
+
+
+  任务运行参数:
+    拦截匹配多个访问分组的操作-选择: //div[@class="title" and contains(text(),'拦截匹配多个访问分组的操作')]/following-sibling::div//span[text()='{}']
+    禁止对不在脱敏方案里的用户表进行查询-选择: //div[@class="title" and contains(text(),'禁止对不在脱敏方案里的用户表进行查询')]/following-sibling::div//span[text()='{}']
+    对不在隐私发现结果里的查询列作强制脱敏-选择: //div[@class="title" and contains(text(),'对不在隐私发现结果里的查询列作强制脱敏')]/following-sibling::div//span[text()='{}']
+    对探测请求拦截处理-选择: //div[@class="title" and contains(text(),'对探测请求拦截处理')]/following-sibling::div//span[text()='{}']
+    对脱敏失败的响应断开连接-选择: //div[@class="title" and contains(text(),'对脱敏失败的响应断开连接')]/following-sibling::div//span[text()='{}']
+    是否限定查询返回行数-选择: //div[@class="title" and contains(text(),'是否限定查询返回行数')]/following-sibling::div//span[text()='{}']
+    文字后方-问号: //div[@class="title" and contains(text(),'{}')]//span//i
+    hover内容展示: //div[@role="tooltip" and contains(text(),'{}')]
+    审计记录返回数据-输入框: //div[@class="title" and contains(text(),'审计记录返回数据')]/following-sibling::div//input
+    审计记录返回数据-减: //div[@class="title" and contains(text(),'审计记录返回数据')]/following-sibling::div//i[@class="el-icon-minus"]
+    审计记录返回数据-加: //div[@class="title" and contains(text(),'审计记录返回数据')]/following-sibling::div//i[@class="el-icon-plus"]
+    反脱敏后缀标识-输入框: //div[@class="title" and contains(text(),'反脱敏后缀标识')]/following-sibling::div//input
+    脱敏数据前缀标识-输入框: //div[@class="title" and contains(text(),'脱敏数据前缀标识')]/following-sibling::div//input
+    脱敏数据后缀标识-输入框: //div[@class="title" and contains(text(),'脱敏数据后缀标识')]/following-sibling::div//input
+    审计的SQL功能类型-输入框: div[@class="title" and contains(text(),'审计的SQL功能类型')]/following-sibling::div//input[contains(@class,'is-medium')]
+    审计的SQL功能类型-下拉: //div[@class="title" and contains(text(),'审计的SQL功能类型')]/following-sibling::div//i[not(@class="el-tag__close el-icon-close")]
+    审计的SQL功能类型-删除-多个: (//div[@class="title" and contains(text(),'审计的SQL功能类型')]/following-sibling::div//i[@class="el-tag__close el-icon-close"])[1]
+    审计的SQL功能类型-默认勾选-多个: //div[@class='title' and contains(text(),'审计的SQL功能类型')]/following-sibling::div//span[@class="el-select__tags-text"]
+    页面数据统计维度-输入框: //div[@class="title" and contains(text(),'页面数据统计维度')]/following-sibling::div//input[contains(@class,'is-medium')]
+    页面数据统计维度-下拉: //div[@class="title" and contains(text(),'审计的SQL功能类型')]/following-sibling::div//i[not(@class="el-tag__close el-icon-close")]
+    页面数据统计维度-删除-多个: //div[@class="title" and contains(text(),'审计的SQL功能类型')]/following-sibling::div//i[@class="el-tag__close el-icon-close"]
+    访问用户IP白名单-新增IP: //div[@class="title" and contains(text(),'访问用户IP白名单')]/following-sibling::div//button//span[contains(text(),'新增IP')]
+    访问用户IP白名单-全部删除: //div[@class="title" and contains(text(),'访问用户IP白名单')]/following-sibling::div//button//span[contains(text(),'全部删除')]
+    删除-取消: //body/div[@role="dialog" and not(contains(@style,'none'))]//div[@class="el-message-box__btns"]//button//span[contains(text(),'取消')]
+    删除-确定: //body/div[@role="dialog" and not(contains(@style,'none'))]//div[@class="el-message-box__btns"]//button//span[contains(text(),'确定')]
+    访问用户IP白名单-新增IP-弹框-输入: //div[@aria-label="新增IP白名单"]//input
+    弹框-取消: //div[@aria-label="新增IP白名单"]//button//span[text()='取 消']
+    弹框-确定: //div[@aria-label="新增IP白名单"]//button//span[text()='确 定']
+    访问用户IP黑名单-新增IP: //div[@class="title" and contains(text(),'访问用户IP黑名单')]/following-sibling::div//button//span[contains(text(),'新增IP')]
+    访问用户IP黑名单-全部删除: //div[@class="title" and contains(text(),'访问用户IP黑名单')]/following-sibling::div//button//span[contains(text(),'全部删除')]
+    访问用户IP黑名单-新增IP-弹框-输入: //div[@aria-label="新增IP黑名单"]//input
+    单个通道任务可配置分组数-输入框: //div[@class="title" and contains(text(),'单个通道任务可配置分组数')]/following-sibling::div//input
+    单个通道任务可配置分组数-加: //div[@class="title" and contains(text(),'单个通道任务可配置分组数')]/following-sibling::div//i[@class="el-icon-plus"]
+    单个通道任务可配置分组数-减: //div[@class="title" and contains(text(),'单个通道任务可配置分组数')]/following-sibling::div//i[@class="el-icon-minus"]
+    明文后缀标识-输入框: //div[@class="title" and contains(text(),'明文后缀标识')]/following-sibling::div//input
+    默认查询返回行数-输入框: //div[@class="title" and contains(text(),'默认查询返回行数')]/following-sibling::div//input
+    默认查询返回行数-加: //div[@class="title" and contains(text(),'默认查询返回行数')]/following-sibling::div//i[@class="el-icon-plus"]
+    默认查询返回行数-减: //div[@class="title" and contains(text(),'默认查询返回行数')]/following-sibling::div//i[@class="el-icon-minus"]
+
+
+  隐私发现参数:
+    是否自动增量发现开关: //div[contains(text(),"是否自动增量发现") and not(contains(@style,"none"))]/following-sibling::div//div[@role="switch"]
+

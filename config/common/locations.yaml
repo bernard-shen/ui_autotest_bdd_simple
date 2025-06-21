@@ -1,0 +1,14 @@
+系统配置-参数配置:
+  脱敏参数:
+    参数配置: //span[text()='参数配置']
+    脱敏参数: //li[text()='脱敏参数']
+    表处理规则输入框: //div[text()=' 表处理规则 ']/parent::div//div[@class="el-select__tags"]
+    表处理规则下拉: //div[text()=' 表处理规则 ']/parent::div//i[@class='el-select__caret el-input__icon el-icon-arrow-up is-reverse']
+    表处理规则输入框标签: //div[text()=' 表处理规则 ']/parent::div//span[text()='{}']
+    表处理规则下拉选择: //li/span[text()='{}']
+    保存修改: //span[text()='保存修改']
+
+通用部分:
+  常用:
+    左侧目录: //li[@role='menuitem']//span[text()='{}']
+    常见按钮: //button//span[text()='{}']
